@@ -1,0 +1,14 @@
+DROP TABLE USERS IF EXISTS;
+
+CREATE TABLE users(
+	id INTEGER PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(255) UNIQUE,
+	email VARCHAR(255) UNIQUE,
+	birthdate VARCHAR(255),
+	password VARCHAR(255),
+	height DOUBLE,
+	weight DOUBLE,
+	age INTEGER,
+	gender VARCHAR(10),
+	bodyfat DOUBLE
+	);
