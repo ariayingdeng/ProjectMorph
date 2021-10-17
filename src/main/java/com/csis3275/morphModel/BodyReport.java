@@ -13,6 +13,8 @@ public class BodyReport {
 	private int fat;
 	private double heightNum;
 	private double weightNum;
+	private int TDEE;	
+	private int exercise = 2;
 	
 	/**
 	 * Default constructor for empty one
@@ -90,31 +92,70 @@ public class BodyReport {
 		stringBuilder.append("<br>Age: ").append(age);
 		stringBuilder.append("<br> Height: ").append(height);
 		stringBuilder.append("<br>Weight: ").append(weight);
-		stringBuilder.append(String.format("<br>BMI: %2f", BMI));
-		stringBuilder.append(String.format("<br>BMR: %d", BMR));
+		stringBuilder.append(String.format("<br>BMI(Body Mass Index): %2f", BMI));
+		stringBuilder.append(String.format("<br>BMR(Basal Metabolic Rate): %d<br><br>", BMR));
+		stringBuilder.append(generateFullCal());
+		stringBuilder.append(generatePersonalCal());
 		
 		
 		
-		if (BMI < 18.5)
-			stringBuilder.append(String.format("<br><br><b class='warning'>BMI %2f is too low, highly recommand"
-					+ " to join the weight gainning course</b>", BMI));
-		else if (BMI > 24 && BMI <= 27 && (fat > 25 || fat == -1))
-			stringBuilder.append(String.format("<br><br><b class='warning'>BMI %2f is a little bit too high,"
-					+ " please consider to join our exercise program and adjust the meal plan</b>", BMI));
-		else if (BMI > 27 && BMI <= 30 && (fat > 25 || fat == -1))
-			stringBuilder.append(String.format("<br><br><b class='warning'>BMI %2f is slightly overweight,"
-					+ " please consider to join our exercise program and adjust the meal plan</b>", BMI));
-		else if (BMI > 30 && (fat > 25 || fat == -1))
-			stringBuilder.append(String.format("<br><br><b class='warning'>BMI %2f is overweight,"
-					+ " highly recommand to join our exercise program and meal plan</b>", BMI));
-		else if (BMI > 27 && fat > 17)
-			stringBuilder.append(String.format("<br><br><b class='warning'>You have good amount of muscle, however,"
-					+ " the body fat %d/% is a little bit high, plase consider to join our meal plan" + 
-					" to change your shape!</b>", BMR));
 		
 		stringBuilder.append("</p> </div>");
 		
 		
+		
+		return stringBuilder.toString();
+	}
+	
+	
+	/**
+	 * Generate the full calories consuming sheet
+	 * @return the html for the page
+	 */
+	private String generateFullCal() {
+		StringBuilder stringBuilder = new StringBuilder();
+		stringBuilder.append("<table class='maintainTable'>").append("<tr>");
+		stringBuilder.append("Sendentary (Office Job): ").append(BMR * 1.2).append(" Calories per day")
+		.append("</tr>");
+		stringBuilder.append("<tr>").append("Light Exercise: ").append(BMR * 1.375).append(" Calories per day")
+		.append("</tr>");
+		stringBuilder.append("<tr>").append("Moderate Exercise: ").append(BMR * 1.55).append(" Calories per day")
+		.append("</tr>");
+		stringBuilder.append("<tr>").append("Heavy Exercise: ").append(BMR * 1.725).append(" Calories per day")
+		.append("</tr>");
+		stringBuilder.append("<tr>").append("Athlete: ").append(BMR * 1.9).append(" Calories per day")
+		.append("</tr>");
+		stringBuilder.append("</table>");
+		
+		return stringBuilder.toString();
+	}
+	
+	private String generatePersonalCal() {
+		
+		switch (exercise) {
+			case 1:
+				TDEE = (int) (BMR * 1.2);
+				break;
+			case 2:
+				TDEE = (int) (BMR * 1.375);
+				break;
+			case 3:
+				TDEE = (int) (BMR * 1.55);
+				break;
+			case 4:
+				TDEE = (int) (BMR * 1.725);
+				break;
+			case 5:
+				TDEE = (int) (BMR * 1.9);
+				break;
+		}
+		
+		StringBuilder stringBuilder = new StringBuilder();
+		stringBuilder.append("<table class='personalTable'>").append("<tr>");
+		stringBuilder.append("<h2 class='tableH2'>").append(TDEE).append("</h2><br>");		
+		stringBuilder.append("<b class='tableLetter'>Calories per Day</b></tr>");
+		stringBuilder.append("<h2 class='tableH2'>").append(TDEE * 7).append("</h2><br>");
+		stringBuilder.append("<b class='tableLetter'>Calories per Week</b></tr>");
 		
 		return stringBuilder.toString();
 	}
