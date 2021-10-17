@@ -12,10 +12,15 @@ import com.csis3275.morphModel.BodyReport;
 
 @Controller
 public class I1_bodyReportController_tch_06 {
+//	
+//	@RequestMapping("/")
+//	public String startWebPageforDraft() {		
+//		return "draft-tch-06";
+//	}
 	
 	@RequestMapping("/")
 	public String startWebPageforDraft() {		
-		return "draft-tch-06";
+		return "morphHome";
 	}
 	
 	
