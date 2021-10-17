@@ -9,102 +9,117 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- Bootstrap CSS -->
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css" />
+
 <style>
 body {
-	background-color: #FFEBCD;
+	background-color: lavender;
+}
+.gd{
+	display:grid;
+	grid-template-columns: 0.5fr 2fr 0.5fr;
+	grid-template-rows:auto;
+}
+.left{
+	grid-column:1;
+	/*background-image: url("/resources/Capture1.JPG");
+	background-size:contain,cover;*/
+	background-color:#FAF0E6;
+}
+.flex {
+	grid-column:2;
+	margin: 0 auto;
+	padding-top:3%;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+.right{
+	grid-column:3;
+	/*background-image: url("/resources/Capture1.JPG");
+	background-size:contain,cover;*/
+	background-color:#FAF0E6; 
+}
+#btn {
+	margin: 0 auto;
+	width: 20%;
 }
 
-.container {
-	margin-top: 0;
-	margin-bottom: 0px;
-	height:100vh;
-	padding-top:50px;
-	background-color:#696969;
-	color:#FFFAFA;
+hr {
+	border-top: 2px solid grey;
 }
 
-.mb-3 {
-	font-size: 20px;
-	font-weight: bolder;
-	font-family: calibri;
-}
-
-h1 {
-	
-	font-weight: bolder;
-	font-family: calibri;
-}
-
-.alert{
-
-	background-color:#696969;
-	color:#FFFAFA;
-	
+h1, h6, #ttl, .alert {
+	color: dimgrey;
 }
 </style>
 
 <title>Body Analysis</title>
 </head>
 <body>
-	<div class="container">
-		<h1>Hello ${userName}</h1>
-		<hr>
-		<h4>We will generate a body analysis report for you. <br>
-			Please input your information below. 
-		</h4>
+	<div class="gd">
+		<div class="left"></div>
 		
-		<br>
-		<form:form action="${pageContext.request.contextPath}/bodyAnalysis"
-			method="POST" cssClass="form-horizontal" modelAttribute="analysis">
+		<div class="flex">
+			<h1>Hello ${userName}</h1>
+			<h6>We will generate a body analysis report for you. Please
+				input your information below.</h6>
 
-			<div class="mb-3">
-				Height
-				<form:input type="text" cssClass="form-control" path="height" />
-			</div>
+			<form:form action="${pageContext.request.contextPath}/bodyAnalysis"
+				method="POST" modelAttribute="analysis">
 
-			<div class="mb-3">
-				Weight
-				<form:input type="text" cssClass="form-control" path="weight" />
-			</div>
+				<label for="age"><strong id="ttl">Age</strong><input
+					type="text" id="age" name="age" placeholder=" " required></label>
 
-			<div class="mb-3">
-				Age
-				<form:input type="text" cssClass="form-control" path="age" />
-			</div>
 
-			<div class="mb-3">
-				Gender
-				<form:select cssClass="form-control" path="gender">
-					<form:option value="NONE" label="--- Select ---" />
-					<form:option value="male" label="Male" />
-					<form:option value="female" label="Female" />
+				<label for="height"><strong id="ttl">Height</strong><input
+					type="text" id="height" name="height" placeholder="cm" required></label>
+
+				<label for="weight"><strong id="ttl">Weight</strong><input
+					type="text" id="weight" name="weight" placeholder="kg" required></label>
+
+
+
+				<strong id="ttl">Sex</strong> &nbsp&nbsp&nbsp&nbsp
+			<form:radiobutton path="gender" value="Male" id="ttl" />  Male &nbsp&nbsp&nbsp
+       			<form:radiobutton path="gender" value="Female" id="ttl" /> Female 
+			
+			<br>
+				<br>
+				<label for="bodyFat"><strong id="ttl">Body Fat</strong><input
+					type="text" id="bodyFat" name="bodyFat" placeholder="20%" required>
+				</label>
+
+				<br>
+				<br>
+				<strong id="ttl">Activity Frequency</strong>
+				<form:select path="activity">
+					<form:option value="0" label="--- Select ---" />
+					<form:option value="1" label="Sedentary (office job)" />
+					<form:option value="2" label="Light Exercise (1-2 days/week)" />
+					<form:option value="3" label="Light Exercise (3-5 days/week)" />
+					<form:option value="4" label="Light Exercise (6-7 days/week)" />
+					<form:option value="5" label="Light Exercise (2x per day)" />
 				</form:select>
 
-			</div>
+				<form:button type="submit" id="btn">Generate</form:button>
+			</form:form>
+			<br> <br>
+			<c:if test="${ result !=null }">
 
-			<div class="mb-3">
-				Body Fat (Optional)
-				<form:input type="text" cssClass="form-control" path="bodyFat" />
-			</div>
-
-			<form:button type="submit" cssClass="btn btn-primary">Generate</form:button>
-		</form:form>
-		<br><br>
-		<c:if test="${ result !=null }">
-			 
-			<div class="alert alert-success" role="alert">
-				Generated Personal Information : <br>
-				<strong>${result}</strong>
-			</div>
-		</c:if>
+				<div class="alert alert-success" role="alert">
+					<hr>
+					<br> Generated Personal Information : <br> <strong
+						id="ttl">${result}</strong>
+				</div>
+			</c:if>
+		</div>
+		<div class="right">
+			
+	</div>
 	</div>
 
+	
 
 	<!-- Optional JavaScript; choose one of the two! -->
 

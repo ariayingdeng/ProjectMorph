@@ -10,5 +10,6 @@ CREATE TABLE users(
 	weight DOUBLE,
 	age INTEGER,
 	gender VARCHAR(10),
-	bodyfat DOUBLE
+	bodyfat DOUBLE,
+	activity INTEGER
 	);

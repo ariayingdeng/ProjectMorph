@@ -7,6 +7,7 @@ public class User {
 	private int age;
 	private String gender;
 	private double bodyFat;
+	private int activity;
 	
 	
 	public double getHeight() {
@@ -40,9 +41,17 @@ public class User {
 		this.bodyFat = bodyFat;
 	}
 	
+	public int getActivity() {
+		return activity;
+	}
+	public void setActivity(int activity) {
+		this.activity = activity;
+	}
 	@Override
 	public String toString() {
-		return "User [height=" + height + ", weight=" + weight + ", age=" + age + ", gender=" + gender + ", bodyFat="
-				+ bodyFat + "]";
+		return "User [ height=" + height + ", weight=" + weight + ", age=" + age + ", gender=" + gender + ", bodyFat="
+				+ bodyFat + ", activity=" + activity + " ]";
 	}
+
+	
 }

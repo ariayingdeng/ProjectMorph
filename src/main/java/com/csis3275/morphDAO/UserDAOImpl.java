@@ -13,7 +13,7 @@ public class UserDAOImpl {
 	
 	JdbcTemplate jdbcTemplate;
 	
-	private final String SQL_CREATE_USERINFO = "INSERT INTO users (height,weight,age,gender,bodyfat) VALUES (?,?,?,?,?)";
+	private final String SQL_CREATE_USERINFO = "INSERT INTO users (height,weight,age,gender,bodyfat,activity) VALUES (?,?,?,?,?,?)";
 	
 	@Autowired
 	public UserDAOImpl(DataSource dataSource) {
@@ -22,6 +22,6 @@ public class UserDAOImpl {
 	
 	public boolean createUser(User user) {
 		
-		return jdbcTemplate.update(SQL_CREATE_USERINFO, user.getHeight(), user.getWeight(), user.getAge(), user.getGender(),user.getBodyFat()) > 0;
+		return jdbcTemplate.update(SQL_CREATE_USERINFO, user.getHeight(), user.getWeight(), user.getAge(), user.getGender(),user.getBodyFat(), user.getActivity()) > 0;
 	}
 }
