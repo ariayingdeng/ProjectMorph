@@ -34,7 +34,7 @@ public class I1_signinController_yde_89 {
 				return "userLogin";
 			}
 		}
-		String errorMsg = "Incorrect username or password";
+		String errorMsg = "Incorrect username or password.";
 		model.addAttribute("error", errorMsg);
 		return "userLogin";
 	}
@@ -45,7 +45,12 @@ public class I1_signinController_yde_89 {
 	}
 	
 	@PostMapping("/newUser")
-	public String addUser(@ModelAttribute("newUser") User newUser) {
+	public String addUser(@ModelAttribute("newUser") User newUser, Model model) {
+		if (!newUser.getPassword().equals(newUser.getConfirmPw())) {
+			String wrongPw = "The passwords you entered don't match.";
+			model.addAttribute("wrong", wrongPw);
+			return "userRegister";
+		}
 		userRepo.save(newUser);
 		return "userLogin";
 	}

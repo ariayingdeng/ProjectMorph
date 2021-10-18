@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name="users")
@@ -24,6 +25,9 @@ public class User {
 	
 	@Column	(name="email", nullable=false)
 	private String email;
+	
+	@Transient
+	private String confirmPw;
 	
 	public User() {
 		
@@ -65,6 +69,14 @@ public class User {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getConfirmPw() {
+		return confirmPw;
+	}
+
+	public void setConfirmPw(String confirmPw) {
+		this.confirmPw = confirmPw;
 	}
 	
 	
