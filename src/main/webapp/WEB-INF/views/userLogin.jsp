@@ -27,7 +27,15 @@ main {
 
 .error {
 	color: red;
-	font-style: italics;
+	font-style: italic;
+}
+
+.alert {
+	color: red;
+	font-style: italic;
+	font-size: 110%;
+	text-align: center;
+	padding-top: 4%;
 }
 
 #loginBtn {
@@ -84,8 +92,8 @@ h4 {
 						</label>
 						<form:errors path="username" cssClass="error" />
 
-						<label for="email"> Password <input type="text" id="email"
-							name="password" placeholder="Password" required>
+						<label for="password"> Password <input type="password"
+							id="password" name="password" placeholder="Password" required>
 						</label>
 						<form:errors path="password" cssClass="error" />
 

@@ -18,12 +18,12 @@ body {
 }
 
 main {
-	height: 40rem;
+	height: 42rem;
 }
 
 .error {
 	color: red;
-	font-style: italics;
+	font-style: italic;
 }
 
 #workoutimg {
@@ -34,6 +34,13 @@ main {
 #signupBtn {
 	width: 250px;
 	margin: 0 auto;
+}
+.alert {
+	color: red;
+	font-style: italic;
+	font-size: 110%;
+	text-align: center;
+	padding-top: 4%;
 }
 </style>
 </head>
@@ -52,8 +59,7 @@ main {
 
 				<!-- Grid -->
 				<div class="flex">
-					<form:form method="POST" action="/newUser"
-						modelAttribute="newUser">
+					<form:form method="POST" action="/newUser" modelAttribute="newUser">
 
 						<!-- Markup example 1: input is inside label -->
 						<label for="username"> User name <input type="text"
@@ -74,14 +80,18 @@ main {
 						<label for="password">Password</label>
 						<input type="password" id="password" name="password"
 							placeholder="Your password" required>
-						<form:errors path="birthdate" cssClass="error" />
+						<form:errors path="password" cssClass="error" />
 
-						<label for="pw">Confirm your password</label>
-						<input type="password" id="pw" name="pw"
+						<label for="confirmPw">Confirm your password</label>
+						<input type="password" id="confirmPw" name="confirmPw"
 							placeholder="Confirm your password" required>
-						<form:errors path="birthdate" cssClass="error" />
+						<form:errors path="confirmPw" cssClass="error" />
 
 						<input type="submit" value="Sign Up" id="signupBtn">
+						
+						<c:if test="${ wrong !=null }">
+							<div class="alert alert-success" role="alert">${wrong}</div>
+						</c:if>
 
 					</form:form>
 				</div>
