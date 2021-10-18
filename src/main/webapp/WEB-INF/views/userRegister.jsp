@@ -14,7 +14,7 @@
 <title>Sign Up</title>
 <style type="text/css">
 body {
-	background-color: blanchedalmond;
+	background-color: lavender;
 }
 
 main {
@@ -52,7 +52,7 @@ main {
 
 				<!-- Grid -->
 				<div class="flex">
-					<form:form method="POST" action="/register"
+					<form:form method="POST" action="/newUser"
 						modelAttribute="newUser">
 
 						<!-- Markup example 1: input is inside label -->

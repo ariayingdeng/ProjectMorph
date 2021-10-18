@@ -14,11 +14,11 @@
 <title>Sign In</title>
 <style>
 body {
-	background-color: blanchedalmond;
+	background-color: lavender;
 }
 
 main {
-	height: 100vh;
+	height: 40rem;
 }
 
 .flex {
@@ -80,12 +80,12 @@ h4 {
 					<form:form method="POST" action="/login" modelAttribute="userLogin">
 
 						<label for="username"> User name <input type="text"
-							id="username" name="username" placeholder="user name" required>
+							id="username" name="username" placeholder="User name" required>
 						</label>
 						<form:errors path="username" cssClass="error" />
 
 						<label for="email"> Password <input type="text" id="email"
-							name="password" placeholder="password" required>
+							name="password" placeholder="Password" required>
 						</label>
 						<form:errors path="password" cssClass="error" />
 
@@ -95,7 +95,7 @@ h4 {
 						</c:if>
 					</form:form>
 					<hr>
-					<form:form method="POST" action="/create"
+					<form:form method="POST" action="/register"
 						modelAttribute="newAccount">
 						<h5>OR</h5>
 						<input type="submit" value="Create New Account" id="newBtn">
