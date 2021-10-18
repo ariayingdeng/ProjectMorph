@@ -7,14 +7,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.csis3275.morphDAO.UserDAOImpl;
+import com.csis3275.morphDao.UserRepository;
 import com.csis3275.morphModel.User;
 
 @Controller
 public class I1_signinController_yde_89 {
 	
 	@Autowired
-	UserDAOImpl userDAOImpl;
+	UserRepository userRepo;
 	
 	@RequestMapping("/")
 	public String showLoginPage(Model model) {
@@ -23,30 +23,30 @@ public class I1_signinController_yde_89 {
 	}
 	
 	@PostMapping("/login")
-	public String login(@ModelAttribute("userLogin") User user, Model model) {
-		String username = user.getUsername();
-		String password = user.getPassword();
-		if (userDAOImpl.correctUsernamePw(username, password)) {
-//			model.addAttribute("username", username);
-//			String welcome = "Welcome!";
-//			model.addAttribute("welcome", welcome);
-			return "userLogin";
+	public String login(@ModelAttribute("userLogin") User signedUser, Model model) {
+		String username = signedUser.getUsername();
+		String password = signedUser.getPassword();
+		for (User user: userRepo.findAll()) {
+			if (user.getUsername().equalsIgnoreCase(username) && user.getPassword().equals(password)) {
+//				model.addAttribute("username", username);
+//				String welcome = "Welcome!";
+//				model.addAttribute("welcome", welcome);
+				return "userLogin";
+			}
 		}
-		else {
-			String errorMsg = "Incorrect username or password";
-			model.addAttribute("error", errorMsg);
-			return "userLogin";
-		}
+		String errorMsg = "Incorrect username or password";
+		model.addAttribute("error", errorMsg);
+		return "userLogin";
 	}
 
-	@PostMapping("/create") 
-	public String createNewUser(@ModelAttribute("newAccount") User user, Model model) {
+	@PostMapping("/register") 
+	public String createNewUser(@ModelAttribute("newAccount") User user) {
 		return "userRegister";
 	}
 	
-	@PostMapping("/register")
-	public String register(@ModelAttribute("newUser") User newUser, Model model) {
-		userDAOImpl.createNewUser(newUser);
+	@PostMapping("/newUser")
+	public String addUser(@ModelAttribute("newUser") User newUser) {
+		userRepo.save(newUser);
 		return "userLogin";
 	}
 }
