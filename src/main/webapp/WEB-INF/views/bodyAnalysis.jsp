@@ -16,30 +16,39 @@
 body {
 	background-color: lavender;
 }
-.gd{
-	display:grid;
-	grid-template-columns: 0.5fr 2fr 0.5fr;
-	grid-template-rows:auto;
+
+.gd {
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr;
+	grid-template-rows: auto;
 }
-.left{
-	grid-column:1;
-	/*background-image: url("/resources/Capture1.JPG");
-	background-size:contain,cover;*/
-	background-color:#FAF0E6;
+
+.left {
+	grid-column: 1;
+	background-image: url(/resources/analysis1.png);
+	background-repeat: no-repeat;
+	background-size: 120%;
+	background-position-x: center;
+	background-position-y: 30%;
 }
+
 .flex {
-	grid-column:2;
+	grid-column: 2;
 	margin: 0 auto;
-	padding-top:3%;
-	padding-left: 5%;
-	padding-right: 5%;
+	padding-top: 3%;
+	padding-left: 2.5%;
+	padding-right: 2.5%;
 }
-.right{
-	grid-column:3;
-	/*background-image: url("/resources/Capture1.JPG");
-	background-size:contain,cover;*/
-	background-color:#FAF0E6; 
+
+.right {
+	grid-column: 3;
+	background-image: url(/resources/analysis2.png);
+	background-repeat: no-repeat;
+	background-size: 135%;
+	background-position-x: 70%;
+	background-position-y: 30%;
 }
+
 #btn {
 	margin: 0 auto;
 	width: 20%;
@@ -59,14 +68,23 @@ h1, h6, #ttl, .alert {
 <body>
 	<div class="gd">
 		<div class="left"></div>
-		
+
 		<div class="flex">
+
+			
 			<h1>Hello ${userName}</h1>
-			<h6>We will generate a body analysis report for you. Please
-				input your information below.</h6>
+			
+			<h6>We will generate a body analysis report for you. Please input your information below.</h6>
 
 			<form:form action="${pageContext.request.contextPath}/bodyAnalysis"
 				method="POST" modelAttribute="analysis">
+
+				
+				
+
+				<label for="username"><strong id="ttl">User name</strong><input
+					type="text" id="username" name="username" placeholder="Same username as Login" required></label>
+
 
 				<label for="age"><strong id="ttl">Age</strong><input
 					type="text" id="age" name="age" placeholder=" " required></label>
@@ -103,6 +121,10 @@ h1, h6, #ttl, .alert {
 				</form:select>
 
 				<form:button type="submit" id="btn">Generate</form:button>
+
+				<c:if test="${error != null}">
+					<div class="alert alert-success" role="alert">${error}</div>
+				</c:if>
 			</form:form>
 			<br> <br>
 			<c:if test="${ result !=null }">
@@ -114,14 +136,8 @@ h1, h6, #ttl, .alert {
 				</div>
 			</c:if>
 		</div>
-		<div class="right">
-			
+		<div class="right"></div>
 	</div>
-	</div>
-
-	
-
-	<!-- Optional JavaScript; choose one of the two! -->
 
 	<!-- Option 1: Bootstrap Bundle with Popper -->
 	<script
