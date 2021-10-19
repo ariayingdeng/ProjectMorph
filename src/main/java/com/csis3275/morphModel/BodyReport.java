@@ -14,7 +14,7 @@ public class BodyReport {
 	private double heightNum;
 	private double weightNum;
 	private int TDEE;	
-	private int exercise = 2;
+	private int exercise;
 	
 	/**
 	 * Default constructor for empty one
@@ -31,13 +31,14 @@ public class BodyReport {
 	 * @param weight user's weight
 	 * @param bodyFat user's bodyFat
 	 */
-	public BodyReport(String name, String age, String height, String weight, String gender, String bodyFat) {
+	public BodyReport(String name, String age, String height, String weight, String gender, String bodyFat, int exercise) {
 		this.name = name;
 		this.age = age;
 		this.height = height;
 		this.weight = weight;
 		this.gender = gender;
 		this.bodyFat = bodyFat;
+		this.exercise = exercise;
 		heightNum = Double.parseDouble(height);
 		weightNum = Double.parseDouble(weight);
 		try {
@@ -45,20 +46,28 @@ public class BodyReport {
 		} catch (Exception exception) {
 			fat = -1;
 		}
+		gettBMR();		
+		this.BMI = gettBMI();
 		generatePersonalCal();
-		this.BMI = getBMI();
-		getBMR();
 		
 		
 	}
 	
 	
 	
+	public double getBMI() {
+		return BMI;
+	}
+
+	public int getBMR() {
+		return BMR;
+	}
+
 	/**
 	 * use height and weight calculate BMI(Body Mass Index)
 	 * @return the BMI of user
 	 */
-	public double getBMI() {		
+	public double gettBMI() {		
 		
 		// BMI formula
 		double BMI = weightNum / (heightNum * heightNum / 10000); 			
@@ -71,7 +80,7 @@ public class BodyReport {
 	 * use height, weight, and age to calculate BMR(Basal Metabolic Rate)
 	 * @return the BMR of user
 	 */
-	public double getBMR() {
+	public double gettBMR() {
 		double BMRNum;
 		if (gender.equals("Male")) {
 			BMRNum = 88.639 + (13.397 * weightNum) + (4.799 * heightNum) - 
@@ -86,7 +95,7 @@ public class BodyReport {
 	}	
 	
 	private void generatePersonalCal() {
-		
+//		System.out.println("generate personal cal");
 		switch (exercise) {
 			case 1:
 				TDEE = (int) (BMR * 1.2);
@@ -104,6 +113,7 @@ public class BodyReport {
 				TDEE = (int) (BMR * 1.9);
 				break;
 		}
+//		System.out.println("TDEE: " + TDEE);
 		
 		
 	}
@@ -151,6 +161,54 @@ public class BodyReport {
 	}	
 	public void setAge(String age) {
 		this.age = age;
+	}
+
+	public int getFat() {
+		return fat;
+	}
+
+	public void setFat(int fat) {
+		this.fat = fat;
+	}
+
+	public double getHeightNum() {
+		return heightNum;
+	}
+
+	public void setHeightNum(double heightNum) {
+		this.heightNum = heightNum;
+	}
+
+	public double getWeightNum() {
+		return weightNum;
+	}
+
+	public void setWeightNum(double weightNum) {
+		this.weightNum = weightNum;
+	}
+
+	public int getTDEE() {
+		return TDEE;
+	}
+
+	public void setTDEE(int tDEE) {
+		TDEE = tDEE;
+	}
+
+	public int getExercise() {
+		return exercise;
+	}
+
+	public void setExercise(int exercise) {
+		this.exercise = exercise;
+	}
+
+	public void setBMI(double bMI) {
+		BMI = bMI;
+	}
+
+	public void setBMR(int bMR) {
+		BMR = bMR;
 	}
 	
 	
