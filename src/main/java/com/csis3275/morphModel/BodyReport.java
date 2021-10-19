@@ -40,6 +40,16 @@ public class BodyReport {
 		this.bodyFat = bodyFat;
 		heightNum = Double.parseDouble(height);
 		weightNum = Double.parseDouble(weight);
+		try {
+			fat = Integer.parseInt(bodyFat);
+		} catch (Exception exception) {
+			fat = -1;
+		}
+		generatePersonalCal();
+		this.BMI = getBMI();
+		getBMR();
+		
+		
 	}
 	
 	
@@ -71,66 +81,11 @@ public class BodyReport {
 					(4.330 * Integer.parseInt(age));
 		}
 		
+		BMR = (int) BMRNum;
 		return BMRNum;
-	}
+	}	
 	
-	@Override
-	public String toString() {
-		BMI = getBMI();
-		BMR = (int) getBMR();
-		
-		try {
-			fat = Integer.parseInt(bodyFat);
-		} catch (Exception exception) {
-			fat = -1;
-		}
-		
-		
-		StringBuilder stringBuilder = new StringBuilder();
-		stringBuilder.append("<div class='bodyReportContainer'> <p class='bodyReport'>");
-		stringBuilder.append("Name: ").append(name);
-		stringBuilder.append("<br>Age: ").append(age);
-		stringBuilder.append("<br> Height: ").append(height);
-		stringBuilder.append("<br>Weight: ").append(weight);
-		stringBuilder.append(String.format("<br>BMI(Body Mass Index): %2f", BMI));
-		stringBuilder.append(String.format("<br>BMR(Basal Metabolic Rate): %d<br><br>", BMR));
-		stringBuilder.append(generateFullCal());
-		stringBuilder.append(generatePersonalCal());
-		
-		
-		
-		
-		stringBuilder.append("</p> </div>");
-		
-		
-		
-		return stringBuilder.toString();
-	}
-	
-	
-	/**
-	 * Generate the full calories consuming sheet
-	 * @return the html for the page
-	 */
-	private String generateFullCal() {
-		StringBuilder stringBuilder = new StringBuilder();
-		stringBuilder.append("<table class='maintainTable'>").append("<tr>");
-		stringBuilder.append("Sendentary (Office Job): ").append(BMR * 1.2).append(" Calories per day")
-		.append("</tr>");
-		stringBuilder.append("<tr>").append("Light Exercise: ").append(BMR * 1.375).append(" Calories per day")
-		.append("</tr>");
-		stringBuilder.append("<tr>").append("Moderate Exercise: ").append(BMR * 1.55).append(" Calories per day")
-		.append("</tr>");
-		stringBuilder.append("<tr>").append("Heavy Exercise: ").append(BMR * 1.725).append(" Calories per day")
-		.append("</tr>");
-		stringBuilder.append("<tr>").append("Athlete: ").append(BMR * 1.9).append(" Calories per day")
-		.append("</tr>");
-		stringBuilder.append("</table>");
-		
-		return stringBuilder.toString();
-	}
-	
-	private String generatePersonalCal() {
+	private void generatePersonalCal() {
 		
 		switch (exercise) {
 			case 1:
@@ -150,14 +105,7 @@ public class BodyReport {
 				break;
 		}
 		
-		StringBuilder stringBuilder = new StringBuilder();
-		stringBuilder.append("<table class='personalTable'>").append("<tr>");
-		stringBuilder.append("<h2 class='tableH2'>").append(TDEE).append("</h2><br>");		
-		stringBuilder.append("<b class='tableLetter'>Calories per Day</b></tr>");
-		stringBuilder.append("<h2 class='tableH2'>").append(TDEE * 7).append("</h2><br>");
-		stringBuilder.append("<b class='tableLetter'>Calories per Week</b></tr>");
 		
-		return stringBuilder.toString();
 	}
 	
 	
