@@ -17,7 +17,7 @@ public class I1_bodyInfo_jch_02 {
 	UserRepository userRepo;
 	
 	
-	@RequestMapping("/bodyAnalysis")
+	@RequestMapping("/")
 	public String bodyAnalysis(@ModelAttribute("analysis")User user, Model model) {
 		model.addAttribute("analysis",user);
 		model.addAttribute("userName", user.getUsername());
