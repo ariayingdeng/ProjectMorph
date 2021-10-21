@@ -18,18 +18,18 @@ public class I1_bodyReportController_tch_06 {
 	CaloryReport caloryReport;
 	
 	
-	@RequestMapping("/")
-	public String startWebPageforDraft() {		
-		return "draft-tch-06";
-	}
+//	@RequestMapping("/")
+//	public String startWebPageforDraft() {		
+//		return "draft-tch-06";
+//	}
 	
 	
 	
 //	
-//	@RequestMapping("/")
-//	public String startWebPageforDraft() {		
-//		return "morphHome";
-//	}
+	@RequestMapping("/")
+	public String startWebPageforDraft() {		
+		return "morphHome";
+	}
 	
 	
 	@PostMapping("/bodyReport")

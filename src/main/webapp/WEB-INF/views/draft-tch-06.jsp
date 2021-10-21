@@ -117,11 +117,7 @@ table thead tr th {
 </head>
 <body>
 	<header>
-		<h1>${ userName } Body Report</h1>
-		<form:form method="POST" action="/bodyReport"
-			modelAttribute="bodyReport">
-			<input type="submit" value="Generate" />
-		</form:form>
+		<h1>${ userName } Body Report</h1>		
 	</header>
 
 	<c:if test="${ bodyReport != null }">
