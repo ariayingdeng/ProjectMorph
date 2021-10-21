@@ -55,7 +55,7 @@ public class I1_bodyReportController_tch_06 {
 		fillTheSheet(model, report);
 		
 		
-		return "draft-tch-06";
+		return "bodyAnalysisReport";
 		
 	}
 	

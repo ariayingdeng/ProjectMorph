@@ -26,7 +26,7 @@ body {
 	width: 90%;
 }
 
-body>header {
+#myHeader {
 	display: grid;
 	grid-template-columns: 25% 55% 20%;
 	grid-template-rows: 50% 50%;
@@ -39,7 +39,7 @@ body>header {
 	width: 95%;
 }
 
-h1 {
+#headerLetter {
 	margin-top: 2%;
 	color: rgb(139, 69, 19);
 	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
@@ -49,7 +49,7 @@ h1 {
 	grid-row: 1/-1;
 }
 
-h1 img {
+#headerLetter img {
 	margin-left: 4%;
 	height: 4rem;
 	margin-right: 2%;
@@ -64,7 +64,7 @@ h1 img {
 	-block-spacing-vertical: 0px;
 }
 
-body>header>#navContainer { -
+#myHeader>#navContainer { -
 	-block-spacing-vertical: 0px;
 }
 
@@ -120,31 +120,37 @@ body>header>#navContainer { -
 	padding: 2%;
 }
 
-body>footer {
-	float: bottom;
-	position: absolute;
-	bottom: 0%;
-	padding: 0%;
-}
-
-h2 {
-	color: black;
-}
-
 hr {
 	heigth: 2px;
 	width: 95%;
 	border: 2px double rgb(139, 69, 19);
 }
 
+
 footer small{
 	margin-left: 2%;
 }
+
+
+
+
+
+
+
+
+
+
+h2 {
+	color: black;
+}
+
+
+
 </style>
 
 </head>
 <body>
-	<header>
+	<header id="myHeader">
 		<h1 id='headerLetter'>
 			<img src="/resources/Group_Logo.png" class="logo" alt="Morph Icon" />MORPH
 
