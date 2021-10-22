@@ -216,7 +216,7 @@ ul {
 }
 
 table thead tr th {
-	font-size: 0.6em;
+	font-size: 0.8em;
 }
 
 .blockH2 {

@@ -160,23 +160,23 @@ h2 {
 		<div id='navContainer'>
 			<nav>
 				<aside id="firstAside">
-					<form action="/bodyReport" method="POST" name="">
+					<form action="/" method="POST" name="">
 					<a href="javascript:document.@name.submit()">Body Information</a>
 					</form>
-					<form action="/bodyReport" method="POST" name="analysisReportForm">
+					<form action="/bodyAnalysisReport" method="POST" name="analysisReportForm">
 					<input type="hidden" name="analysisReport" value="analysisReport" />
 					<a href="javascript:document.analysisReportForm.submit()">Analysis Report</a> 
 					</form>
-					<form action="/bodyReport" method="POST" name="">
+					<form action="/" method="POST" name="">
 					<a href="javascript:document.@name.submit()">Workout Plansn</a>
 					</form>
-					<form action="/bodyReport" method="POST" name="">
+					<form action="/" method="POST" name="">
 					<a href="javascript:document.@name.submit()">Meal Plans</a>
 					</form>
-					<form action="/bodyReport" method="POST" name="">
+					<form action="/" method="POST" name="">
 					<a href="javascript:document.@name.submit()">Check-In</a>
 					</form>
-					<form action="/bodyReport" method="POST" name="">
+					<form action="/" method="POST" name="">
 					<a href="javascript:document.@name.submit()">Community</a>
 					</form>
 					

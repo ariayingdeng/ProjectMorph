@@ -2,6 +2,7 @@ package com.csis3275.morphController;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,8 +32,14 @@ public class I1_bodyReportController_tch_06 {
 		return "morphHome";
 	}
 	
+	@GetMapping("/bodyAnalysisReport")
+	public String redirectToBodyReport(@ModelAttribute("bodyReport") BodyReport report, Model model) {	
+		
+		return "bodyAnalysisReport";
+	}
 	
-	@PostMapping("/bodyReport")
+	
+	@PostMapping("/bodyAnalysisReport")
 	public String generateBodyReport(@ModelAttribute("bodyReport") BodyReport report, Model model) {
 		
 		// Query the data from database
