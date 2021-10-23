@@ -71,20 +71,14 @@ h1, h6, #ttl, .alert {
 
 		<div class="flex">
 
-			
+
 			<h1>Hello ${userName}</h1>
-			
-			<h6>We will generate a body analysis report for you. Please input your information below.</h6>
+
+			<h6>We will generate a body analysis report for you. Please
+				input your information below.</h6>
 
 			<form:form action="${pageContext.request.contextPath}/bodyAnalysis"
 				method="POST" modelAttribute="analysis">
-
-				
-				
-
-				<label for="username"><strong id="ttl">User name</strong><input
-					type="text" id="username" name="username" placeholder="Same username as Login" required></label>
-
 
 				<label for="age"><strong id="ttl">Age</strong><input
 					type="text" id="age" name="age" placeholder=" " required></label>
@@ -96,13 +90,11 @@ h1, h6, #ttl, .alert {
 				<label for="weight"><strong id="ttl">Weight</strong><input
 					type="text" id="weight" name="weight" placeholder="kg" required></label>
 
-
-
 				<strong id="ttl">Sex</strong> &nbsp&nbsp&nbsp&nbsp
-			<form:radiobutton path="gender" value="Male" id="ttl" />  Male &nbsp&nbsp&nbsp
+				<form:radiobutton path="gender" value="Male" id="ttl" />  Male &nbsp&nbsp&nbsp
        			<form:radiobutton path="gender" value="Female" id="ttl" /> Female 
 			
-			<br>
+				<br>
 				<br>
 				<label for="bodyFat"><strong id="ttl">Body Fat</strong><input
 					type="text" id="bodyFat" name="bodyFat" placeholder="20%" required>
