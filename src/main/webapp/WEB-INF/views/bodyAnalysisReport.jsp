@@ -31,8 +31,8 @@ body {
 	grid-template-columns: 25% 55% 20%;
 	grid-template-rows: 50% 50%;
 	padding: 0%;
-	height: 5%;
-	--block-spacing-vertical: 0px;
+	height: 5%; -
+	-block-spacing-vertical: 0px;
 }
 
 .myHeader form {
@@ -95,7 +95,6 @@ body {
 	font-weight: 600;
 	padding-bottom: 1%;
 	vertical-align: bottom;
-	
 }
 
 #navContainer {
@@ -110,7 +109,7 @@ body {
 }
 
 #secondAside {
-    display: flex;
+	display: flex;
 	justify-content: center;
 	grid-row: 1;
 	grid-column: 3;
@@ -132,7 +131,6 @@ body {
 	border: 2px double rgb(139, 69, 19);
 }
 
-
 body>footer {
 	padding-left: 5%;
 	padding-top: 0px;
@@ -142,7 +140,6 @@ body>footer {
 }
 
 /* CSS style for header endding */
-
 .calH2 {
 	margin-bottom: 1%;
 	color: #404040;
@@ -241,60 +238,61 @@ tr, td, th {
 </head>
 <body>
 	<div class="myHeader">
-		
+
 		<form action="/" method="POST" name="morphHome"></form>
 		<h1 id='headerLetter'>
-		
-			<input type="hidden" name="morphHome" value="/" >
-			<a href="javascript:document.morphHome.submit()">
-			<img src="/resources/Group_Logo.png" class="logo" alt="Morph Icon" />
-			</a>
-			MORPH
+
+			<input type="hidden" name="morphHome" value="/"> <a
+				href="javascript:document.morphHome.submit()"> <img
+				src="/resources/Group_Logo.png" class="logo" alt="Morph Icon" />
+			</a> MORPH
 		</h1>
-		
-		
-		
+
+
+
 		<div id='navContainer'>
 			<nav>
 				<aside id="firstAside">
 					<form action="/" method="POST" name="">
-					<a href="javascript:document.@name.submit()">Body Info</a>
+						<a href="javascript:document.@name.submit()">Body Info</a>
 					</form>
-					<form action="/bodyAnalysisReport" method="POST" name="analysisReportForm">
-					<input type="hidden" name="analysisReport" value="analysisReport" />
-					<a href="javascript:document.analysisReportForm.submit()">Analysis</a> 
-					</form>
-					<form action="/" method="POST" name="">
-					<a href="javascript:document.@name.submit()">Workout Plans</a>
+					<form action="/bodyAnalysisReport" method="POST"
+						name="analysisReportForm">
+						<input type="hidden" name="analysisReport" value="analysisReport" />
+						<a href="javascript:document.analysisReportForm.submit()">Analysis</a>
 					</form>
 					<form action="/" method="POST" name="">
-					<a href="javascript:document.@name.submit()">Meal Plans</a>
+						<a href="javascript:document.@name.submit()">Workout Plans</a>
 					</form>
 					<form action="/" method="POST" name="">
-					<a href="javascript:document.@name.submit()">Check-In</a>
+						<a href="javascript:document.@name.submit()">Meal Plans</a>
 					</form>
 					<form action="/" method="POST" name="">
-					<a href="javascript:document.@name.submit()">Community</a>
+						<a href="javascript:document.@name.submit()">Check-In</a>
 					</form>
-					
+					<form action="/" method="POST" name="">
+						<a href="javascript:document.@name.submit()">Community</a>
+					</form>
+
 				</aside>
 			</nav>
 
 		</div>
 		<c:if test="${ loggedIn == null }">
 			<aside id="secondAside">
-			<form action="/loginPage" method="POST" name="loginPage"></form>	
-				<a href="javascript:document.loginPage.submit()">Login</a> 
-				
-			<form action="/registerPage" method="POST" name="registerPage"></form>
+				<form action="/loginPage" method="POST" name="loginPage"></form>
+				<a href="javascript:document.loginPage.submit()">Login</a>
+
+				<form action="/registerPage" method="POST" name="registerPage"></form>
 				<a href="javascript:document.registerPage.submit()">Sign Up</a>
-				
+
 			</aside>
 
 		</c:if>
 		<c:if test="${ loggedIn != null }">
 			<aside id="secondAside">
-				<a href="" id="userAccount">Welcome, ${ userName }</a>
+				<form action="/logOut" method="POST" name="logOut"></form>
+				<a href="javascript:document.logOut.submit()">${ loggedIn }, Log Out</a>
 			</aside>
 		</c:if>
 

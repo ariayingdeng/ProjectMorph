@@ -1,5 +1,8 @@
 package com.csis3275.morphController;
 
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,54 +12,60 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.csis3275.morphModel.BodyReport;
 import com.csis3275.morphModel.CaloryReport;
+import com.csis3275.morphModel.User;
+import com.csis3275.morphRepository.UserRepository;
 
 
 
 @Controller
 public class I1_bodyReportController_tch_06 {
 	
+	@Autowired
+	UserRepository userRepo;
 	
 	CaloryReport caloryReport;
 	
 	@RequestMapping("/")
 	@GetMapping("/")
-	public String startHomePage() {		
+	public String startHomePage(HttpSession session, Model model) {		
+		if (session.getAttribute("loggedIn") != null && (boolean) session.getAttribute("loggedIn")) {
+			User loggedUser = userRepo.findById((int) session.getAttribute("userId"));
+			model.addAttribute("loggedIn", loggedUser.getUsername());
+		}
 		return "morphHome";
 	}
 	
 	
-	@GetMapping("/bodyAnalysisReport")
-	public String redirectToBodyReport(@ModelAttribute("bodyReport") BodyReport report, Model model) {	
-		
-		return "bodyAnalysisReport";
-	}
-	
-	
+	@RequestMapping("/bodyAnalysisReport")
 	@PostMapping("/bodyAnalysisReport")
-	public String generateBodyReport(@ModelAttribute("bodyReport") BodyReport report, Model model) {
-		
-		// Query the data from database
-		
-		
-		// Create a report for user
-		String name = "James Chen";
-		String age = "40";
-		String weight = "75";
-		String height = "170";
-		String gender = "Male";
-		String bodyFat = "18";
-		int exercise = 2;
-		
-		report = new BodyReport(name, age, height, weight, gender, bodyFat, exercise);
-		
+	public String generateBodyReport(@ModelAttribute("bodyReport") BodyReport report, Model model, HttpSession session) {
+		if (session.getAttribute("loggedIn") != null && (boolean) session.getAttribute("loggedIn")) {
+			User loggedUser = userRepo.findById((int) session.getAttribute("userId"));
+			model.addAttribute("loggedIn", loggedUser.getUsername());
+			String name = loggedUser.getUsername();
+			
+			// Query the data from database
+			
+			
+			// Create a report for user
+			String age = "40";
+			String weight = "75";
+			String height = "170";
+			String gender = "Male";
+			String bodyFat = "18";
+			int exercise = 2;
+			
+			report = new BodyReport(name, age, height, weight, gender, bodyFat, exercise);
+			
 
-		
-		model.addAttribute("bodyReport", report);
-		fillTheSheet(model, report);
-		
-		
-		return "bodyAnalysisReport";
-		
+			
+			model.addAttribute("bodyReport", report);
+			fillTheSheet(model, report);
+			
+			
+			return "bodyAnalysisReport";
+		}
+			return "userLogin";
 	}
 	
 	private void fillTheSheet(Model model, BodyReport report) {

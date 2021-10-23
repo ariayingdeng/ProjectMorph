@@ -31,6 +31,8 @@ public class I1_signinController_yde_89 {
 		for (User user: userRepo.findAll()) {
 			if (user.getUsername().equalsIgnoreCase(username) && user.getPassword().equals(password)) {
 				session.setAttribute("userId", user.getId());
+				session.setAttribute("loggedIn", true);
+				model.addAttribute("loggedIn", user.getUsername());
 				return "morphHome";
 			}
 		}
@@ -56,5 +58,11 @@ public class I1_signinController_yde_89 {
 		return "userLogin";
 	}
 	
+	@PostMapping("/logOut")
+	public String userLogOut(@ModelAttribute("newAccount") User user, Model model, HttpSession session) {
+		model.addAttribute("loggedIn", null);
+		session.invalidate();
+		return "morphHome";
+	}
 
 }

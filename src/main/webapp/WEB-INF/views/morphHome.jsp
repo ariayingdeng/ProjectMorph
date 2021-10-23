@@ -238,7 +238,8 @@ body>footer {
 		</c:if>
 		<c:if test="${ loggedIn != null }">
 			<aside id="secondAside">
-				<a href="" id="userAccount">Welcome, ${ userName }</a>
+			<form action="/logOut" method="POST" name="logOut"></form>
+				<a href="javascript:document.logOut.submit()">${ loggedIn }, Log Out</a>
 			</aside>
 		</c:if>
 

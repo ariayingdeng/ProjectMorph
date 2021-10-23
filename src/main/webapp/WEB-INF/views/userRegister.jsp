@@ -217,7 +217,7 @@ main {
 		</c:if>
 		<c:if test="${ loggedIn != null }">
 			<aside id="secondAside">
-				<a href="" id="userAccount">Welcome, ${ userName }</a>
+				<a href="" id="userAccount">${ loggedIn }, Log Out</a>
 			</aside>
 		</c:if>
 
