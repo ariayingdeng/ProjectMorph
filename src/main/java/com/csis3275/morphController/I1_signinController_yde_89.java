@@ -18,9 +18,9 @@ public class I1_signinController_yde_89 {
 	@Autowired
 	UserRepository userRepo;
 	
-	@RequestMapping("/")
-	public String showLoginPage(Model model) {
-		model.addAttribute("user", new User());
+	@RequestMapping("/loginPage")
+	@PostMapping("/loginPage")
+	public String showLoginPage(@ModelAttribute("newAccount") User user) {
 		return "userLogin";
 	}
 	
@@ -30,11 +30,8 @@ public class I1_signinController_yde_89 {
 		String password = signedUser.getPassword();
 		for (User user: userRepo.findAll()) {
 			if (user.getUsername().equalsIgnoreCase(username) && user.getPassword().equals(password)) {
-//				String welcomeMsg = "Welcome, " + username;
-//				model.addAttribute("welcome", welcomeMsg);
-//				return "morphHome";
 				session.setAttribute("userId", user.getId());
-				return "userLogin";
+				return "morphHome";
 			}
 		}
 		String errorMsg = "Incorrect username or password.";
@@ -42,7 +39,8 @@ public class I1_signinController_yde_89 {
 		return "userLogin";
 	}
 
-	@RequestMapping("/register") 
+	@RequestMapping("/registerPage")
+	@PostMapping("/registerPage") 
 	public String createNewUser(@ModelAttribute("newAccount") User user) {
 		return "userRegister";
 	}
@@ -57,4 +55,6 @@ public class I1_signinController_yde_89 {
 		userRepo.save(newUser);
 		return "userLogin";
 	}
+	
+
 }

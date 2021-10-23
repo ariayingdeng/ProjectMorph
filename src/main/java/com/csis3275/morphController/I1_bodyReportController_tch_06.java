@@ -14,28 +14,16 @@ import com.csis3275.morphModel.CaloryReport;
 
 @Controller
 public class I1_bodyReportController_tch_06 {
-//	
+	
 	
 	CaloryReport caloryReport;
 	
-	
-//	@RequestMapping("/")
-//	public String startWebPageforDraft() {		
-//		return "draft-tch-06";
-//	}
-	
-	
-	
-//	
 	@RequestMapping("/")
-	public String startWebPageforDraft() {		
+	@GetMapping("/")
+	public String startHomePage() {		
 		return "morphHome";
 	}
 	
-	@GetMapping("/")
-	public String goBackToHome() {		
-		return "morphHome";
-	}
 	
 	@GetMapping("/bodyAnalysisReport")
 	public String redirectToBodyReport(@ModelAttribute("bodyReport") BodyReport report, Model model) {	

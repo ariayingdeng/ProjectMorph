@@ -25,13 +25,18 @@ body {
 	color: rgb(139, 69, 19);
 }
 
-/* header css start */
-#myHeader {
+/* CSS style for header beginning*/
+.myHeader {
 	display: grid;
 	grid-template-columns: 25% 55% 20%;
 	grid-template-rows: 50% 50%;
 	padding: 0%;
-	height: 9%;
+	height: 5%;
+	--block-spacing-vertical: 0px;
+}
+
+.myHeader form {
+	margin: 0%;
 }
 
 #bodyContainer {
@@ -46,7 +51,7 @@ body {
 		sans-serif;
 	margin-bottom: 0%;
 	grid-colum: 1;
-	grid-row: 1/-1;
+	grid-row: 1/3;
 	padding-top: 5%;
 }
 
@@ -90,6 +95,7 @@ body {
 	font-weight: 600;
 	padding-bottom: 1%;
 	vertical-align: bottom;
+	
 }
 
 #navContainer {
@@ -104,7 +110,7 @@ body {
 }
 
 #secondAside {
-	margin-top: 5%;
+    display: flex;
 	justify-content: center;
 	grid-row: 1;
 	grid-column: 3;
@@ -120,20 +126,23 @@ body {
 	padding: 2%;
 }
 
-hr {
+#headerHr {
 	heigth: 2px;
 	width: 100%;
 	border: 2px double rgb(139, 69, 19);
 }
+
 
 body>footer {
 	padding-left: 5%;
 	padding-top: 0px;
 	padding-bottom: 3%;
 	margin: 0%;
+	color: rgb(139, 69, 19);
 }
 
-/* header css end */
+/* CSS style for header endding */
+
 .calH2 {
 	margin-bottom: 1%;
 	color: #404040;
@@ -231,61 +240,66 @@ tr, td, th {
 </style>
 </head>
 <body>
-	<header id="myHeader">
-	
-		<form action="/" method="POST" name="morphHome"></form>
-			<h1 id='headerLetter'>
-				<input type="hidden" name="morphHome" value="/"> <a
-					href="javascript:document.morphHome.submit()"> <img
-					src="/resources/Group_Logo.png" class="logo" alt="Morph Icon" />
-				</a>
-				MORPH
-			</h1>
+	<div class="myHeader">
 		
-
+		<form action="/" method="POST" name="morphHome"></form>
+		<h1 id='headerLetter'>
+		
+			<input type="hidden" name="morphHome" value="/" >
+			<a href="javascript:document.morphHome.submit()">
+			<img src="/resources/Group_Logo.png" class="logo" alt="Morph Icon" />
+			</a>
+			MORPH
+		</h1>
+		
+		
+		
 		<div id='navContainer'>
 			<nav>
 				<aside id="firstAside">
 					<form action="/" method="POST" name="">
-						<a href="javascript:document.@name.submit()">Body Info</a>
+					<a href="javascript:document.@name.submit()">Body Info</a>
 					</form>
-					<form action="/bodyAnalysisReport" method="POST"
-						name="analysisReportForm">
-						<input type="hidden" name="analysisReport" value="analysisReport" />
-						<a href="javascript:document.analysisReportForm.submit()">Analysis</a>
-					</form>
-					<form action="/" method="POST" name="">
-						<a href="javascript:document.@name.submit()">Workout Plans</a>
+					<form action="/bodyAnalysisReport" method="POST" name="analysisReportForm">
+					<input type="hidden" name="analysisReport" value="analysisReport" />
+					<a href="javascript:document.analysisReportForm.submit()">Analysis</a> 
 					</form>
 					<form action="/" method="POST" name="">
-						<a href="javascript:document.@name.submit()">Meal Plans</a>
+					<a href="javascript:document.@name.submit()">Workout Plans</a>
 					</form>
 					<form action="/" method="POST" name="">
-						<a href="javascript:document.@name.submit()">Check-In</a>
+					<a href="javascript:document.@name.submit()">Meal Plans</a>
 					</form>
 					<form action="/" method="POST" name="">
-						<a href="javascript:document.@name.submit()">Community</a>
+					<a href="javascript:document.@name.submit()">Check-In</a>
 					</form>
-
+					<form action="/" method="POST" name="">
+					<a href="javascript:document.@name.submit()">Community</a>
+					</form>
+					
 				</aside>
 			</nav>
 
 		</div>
-		<c:if test="${ login == null }">
+		<c:if test="${ loggedIn == null }">
 			<aside id="secondAside">
-				<a href="" id='login'>Login</a> <a href="" id='createAccount'>Sign
-					Up</a>
+			<form action="/loginPage" method="POST" name="loginPage"></form>	
+				<a href="javascript:document.loginPage.submit()">Login</a> 
+				
+			<form action="/registerPage" method="POST" name="registerPage"></form>
+				<a href="javascript:document.registerPage.submit()">Sign Up</a>
+				
 			</aside>
 
 		</c:if>
-		<c:if test="${ login != null }">
+		<c:if test="${ loggedIn != null }">
 			<aside id="secondAside">
 				<a href="" id="userAccount">Welcome, ${ userName }</a>
 			</aside>
 		</c:if>
 
-	</header>
-	<hr>
+	</div>
+	<hr id="headerHr">
 
 	<div id="reportContainer">
 		<h1 id="reportH1">Body Report of ${ userName }</h1>

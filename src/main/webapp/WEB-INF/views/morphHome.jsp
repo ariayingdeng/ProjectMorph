@@ -26,7 +26,7 @@ body {
 	
 }
 
-
+/* CSS style for header beginning*/
 .myHeader {
 	display: grid;
 	grid-template-columns: 25% 55% 20%;
@@ -37,7 +37,7 @@ body {
 }
 
 .myHeader form {
-	
+	margin: 0%;
 }
 
 #bodyContainer {
@@ -111,7 +111,7 @@ body {
 }
 
 #secondAside {
-	margin-top: 5%;
+    display: flex;
 	justify-content: center;
 	grid-row: 1;
 	grid-column: 3;
@@ -127,7 +127,7 @@ body {
 	padding: 2%;
 }
 
-hr {
+#headerHr {
 	heigth: 2px;
 	width: 100%;
 	border: 2px double rgb(139, 69, 19);
@@ -139,16 +139,10 @@ body>footer {
 	padding-top: 0px;
 	padding-bottom: 3%;
 	margin: 0%;
+	color: rgb(139, 69, 19);
 }
 
-
-
-
-
-
-
-
-
+/* CSS style for header ending */
 
 
 #bodyContainer {
@@ -231,21 +225,26 @@ body>footer {
 			</nav>
 
 		</div>
-		<c:if test="${ login == null }">
+		<c:if test="${ loggedIn == null }">
 			<aside id="secondAside">
-				<a href="" id='login'>Login</a> <a href="" id='createAccount'>Sign
-					Up</a>
+			<form action="/loginPage" method="POST" name="loginPage"></form>	
+				<a href="javascript:document.loginPage.submit()">Login</a> 
+				
+			<form action="/registerPage" method="POST" name="registerPage"></form>
+				<a href="javascript:document.registerPage.submit()">Sign Up</a>
+				
 			</aside>
 
 		</c:if>
-		<c:if test="${ login != null }">
+		<c:if test="${ loggedIn != null }">
 			<aside id="secondAside">
 				<a href="" id="userAccount">Welcome, ${ userName }</a>
 			</aside>
 		</c:if>
 
 	</div>
-	<hr>
+	<hr id="headerHr">
+	
 	<div id='bodyContainer'>
 
 		
