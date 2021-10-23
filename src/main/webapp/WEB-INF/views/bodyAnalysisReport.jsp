@@ -19,13 +19,13 @@
 body {
 	display: flex;
 	flex-direction: column;
-	margin-left: 5%;
+	
 	background-color: lavender;
 	font-family: calibri;
 	min-height: 70vw;
-	width: 90%;
+	width: 100%;
 	color: rgb(139, 69, 19);
-	width: 90%;
+	
 }
 
 

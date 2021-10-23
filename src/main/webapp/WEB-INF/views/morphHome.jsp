@@ -17,13 +17,13 @@
 body {
 	display: flex;
 	flex-direction: column;
-	margin-left: 5%;
+	
 	background-color: lavender;
 	font-family: calibri;
 
-	width: 90%;
+	width: 100%;
 	color: rgb(139, 69, 19);
-	width: 90%;
+	
 }
 
 #myHeader {
@@ -122,7 +122,7 @@ body {
 
 hr {
 	heigth: 2px;
-	width: 95%;
+	width: 100%;
 	border: 2px double rgb(139, 69, 19);
 }
 
@@ -139,18 +139,37 @@ footer small{
 
 
 
+#bodyContainer {
+	margin-top: 0%;
+	margin-left: 0%;
+	width: 100%;
+	background-image: url("/resources/fitnessandfood.jpg");
+	padding-left: 10%;	
+	padding-right: 10%;
+	padding-top: 3%;
+	padding-bottom: 35%;
+	background-size: cover;	
+	
 
-h2 {
-	color: black;
 }
 
-#bodyContainer img {
-	width: 50%;
+#bodyContainer h2 {
+	padding-left: 50%;
+	color: white;
+	font-size: 3rem;
+	white-space: nowrap;
+	padding-right: 10%;
 	
 }
 
+
+
 #bodyContainer p {
-	color: #404040;
+	color: white;
+	padding-left: 50%;
+	font-size: 1.7rem;
+	
+	
 }
 
 
@@ -176,7 +195,7 @@ h2 {
 					<a href="javascript:document.analysisReportForm.submit()">Analysis Report</a> 
 					</form>
 					<form action="/" method="POST" name="">
-					<a href="javascript:document.@name.submit()">Workout Plansn</a>
+					<a href="javascript:document.@name.submit()">Workout Plans</a>
 					</form>
 					<form action="/" method="POST" name="">
 					<a href="javascript:document.@name.submit()">Meal Plans</a>
@@ -209,13 +228,13 @@ h2 {
 	<hr>
 	<div id='bodyContainer'>
 
-		<img src="/resources/workoutandeat.jpg" alt="picture" >
+		
 		
 		<h2>
 		<br>
-		About Project</h2>
-		<p>We create a easier way to bring you healthier life, input your information and we will create a customized plan for you.<br>
-			Don't hesitate, sign up and join us, then start to reach a bight future.
+		A healthier lifestyle,<br> a better yourself!</h2>
+		<p>
+			Sign up and start a brighter future!
 		</p>
 
 
