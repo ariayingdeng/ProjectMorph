@@ -32,6 +32,11 @@ public class I1_bodyReportController_tch_06 {
 		return "morphHome";
 	}
 	
+	@GetMapping("/")
+	public String goBackToHome() {		
+		return "morphHome";
+	}
+	
 	@GetMapping("/bodyAnalysisReport")
 	public String redirectToBodyReport(@ModelAttribute("bodyReport") BodyReport report, Model model) {	
 		

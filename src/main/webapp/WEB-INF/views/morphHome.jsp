@@ -184,12 +184,18 @@ body>footer {
 </head>
 <body>
 	<header id="myHeader">
+		
+		<form action="/" method="POST" name="morphHome">
 		<h1 id='headerLetter'>
-			<img src="/resources/Group_Logo.png" class="logo" alt="Morph Icon" />MORPH
-
-
+			<input type="hidden" name="morphHome" value="/" >
+			<a href="javascript:document.morphHome.submit()">
+			<img src="/resources/Group_Logo.png" class="logo" alt="Morph Icon" />
+			</a>
+			MORPH
 		</h1>
-
+		</form>
+		
+		
 		<div id='navContainer'>
 			<nav>
 				<aside id="firstAside">

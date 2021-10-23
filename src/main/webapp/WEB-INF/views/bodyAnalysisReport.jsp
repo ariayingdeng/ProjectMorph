@@ -15,23 +15,17 @@
 	href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
 <title>Morph Body Report</title>
 <style>
-
 body {
 	display: flex;
-	flex-direction: column;	
+	flex-direction: column;
 	background-color: lavender;
 	font-family: calibri;
 	min-height: 70vw;
 	width: 100%;
 	color: rgb(139, 69, 19);
-	
 }
 
-
 /* header css start */
-
-
-
 #myHeader {
 	display: grid;
 	grid-template-columns: 25% 55% 20%;
@@ -95,7 +89,6 @@ body {
 	font-weight: 600;
 	padding-bottom: 1%;
 	vertical-align: bottom;
-	
 }
 
 #navContainer {
@@ -132,7 +125,6 @@ hr {
 	border: 2px double rgb(139, 69, 19);
 }
 
-
 body>footer {
 	padding-left: 5%;
 	padding-top: 0px;
@@ -140,15 +132,7 @@ body>footer {
 	margin: 0%;
 }
 
-
 /* header css end */
-
-
-
-
-
-
-
 .calH2 {
 	margin-bottom: 1%;
 	color: #404040;
@@ -160,7 +144,6 @@ body>footer {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	background-color: LavenderBlush;
-	
 }
 
 small {
@@ -174,7 +157,7 @@ aside li {
 
 #personalBlock {
 	font-size: 1.4em;
-	padding: 1rem;	
+	padding: 1rem;
 }
 
 #D_WCaloriesBlock {
@@ -235,50 +218,53 @@ table thead tr th {
 }
 
 #reportH1 {
-	grid-column: 1 / -1;
+	grid-column: 1/-1;
 	padding-left: 5%;
 	color: #404040;
-
 }
 
 tr, td, th {
 	background-color: LavenderBlush;
 	color: #404040;
 }
-
 </style>
 </head>
 <body>
 	<header id="myHeader">
-		<h1 id='headerLetter'>
-			<img src="/resources/Group_Logo.png" class="logo" alt="Morph Icon" />MORPH
-
-
-		</h1>
+		<form action="/" method="POST" name="morphHome">
+			<h1 id='headerLetter'>
+				<input type="hidden" name="morphHome" value="/"> <a
+					href="javascript:document.morphHome.submit()"> <img
+					src="/resources/Group_Logo.png" class="logo" alt="Morph Icon" />
+				</a>
+				MORPH
+			</h1>
+		</form>
 
 		<div id='navContainer'>
 			<nav>
 				<aside id="firstAside">
 					<form action="/" method="POST" name="">
-					<a href="javascript:document.@name.submit()">Body Info</a>
+						<a href="javascript:document.@name.submit()">Body Info</a>
 					</form>
-					<form action="/bodyAnalysisReport" method="POST" name="analysisReportForm">
-					<input type="hidden" name="analysisReport" value="analysisReport" />
-					<a href="javascript:document.analysisReportForm.submit()">Analysis</a> 
-					</form>
-					<form action="/" method="POST" name="">
-					<a href="javascript:document.@name.submit()">Workout Plans</a>
+					<form action="/bodyAnalysisReport" method="POST"
+						name="analysisReportForm">
+						<input type="hidden" name="analysisReport" value="analysisReport" />
+						<a href="javascript:document.analysisReportForm.submit()">Analysis</a>
 					</form>
 					<form action="/" method="POST" name="">
-					<a href="javascript:document.@name.submit()">Meal Plans</a>
+						<a href="javascript:document.@name.submit()">Workout Plans</a>
 					</form>
 					<form action="/" method="POST" name="">
-					<a href="javascript:document.@name.submit()">Check-In</a>
+						<a href="javascript:document.@name.submit()">Meal Plans</a>
 					</form>
 					<form action="/" method="POST" name="">
-					<a href="javascript:document.@name.submit()">Community</a>
+						<a href="javascript:document.@name.submit()">Check-In</a>
 					</form>
-					
+					<form action="/" method="POST" name="">
+						<a href="javascript:document.@name.submit()">Community</a>
+					</form>
+
 				</aside>
 			</nav>
 
