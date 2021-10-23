@@ -1,5 +1,7 @@
 package com.csis3275.morphController;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,8 +9,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.csis3275.morphDao.UserRepository;
 import com.csis3275.morphModel.User;
+import com.csis3275.morphRepository.UserRepository;
 
 @Controller
 public class I1_signinController_yde_89 {
@@ -23,14 +25,15 @@ public class I1_signinController_yde_89 {
 	}
 	
 	@PostMapping("/login")
-	public String login(@ModelAttribute("userLogin") User signedUser, Model model) {
+	public String login(@ModelAttribute("userLogin") User signedUser, Model model, HttpSession session) {
 		String username = signedUser.getUsername();
 		String password = signedUser.getPassword();
 		for (User user: userRepo.findAll()) {
 			if (user.getUsername().equalsIgnoreCase(username) && user.getPassword().equals(password)) {
-//				model.addAttribute("username", username);
-//				String welcome = "Welcome!";
-//				model.addAttribute("welcome", welcome);
+//				String welcomeMsg = "Welcome, " + username;
+//				model.addAttribute("welcome", welcomeMsg);
+//				return "morphHome";
+				session.setAttribute("userId", user.getId());
 				return "userLogin";
 			}
 		}
@@ -39,7 +42,7 @@ public class I1_signinController_yde_89 {
 		return "userLogin";
 	}
 
-	@PostMapping("/register") 
+	@RequestMapping("/register") 
 	public String createNewUser(@ModelAttribute("newAccount") User user) {
 		return "userRegister";
 	}
