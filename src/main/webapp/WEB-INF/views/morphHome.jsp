@@ -20,7 +20,7 @@ body {
 	margin-left: 5%;
 	background-color: lavender;
 	font-family: calibri;
-	height: 70vw;
+
 	width: 90%;
 	color: rgb(139, 69, 19);
 	width: 90%;
@@ -144,6 +144,14 @@ h2 {
 	color: black;
 }
 
+#bodyContainer img {
+	width: 50%;
+	
+}
+
+#bodyContainer p {
+	color: #404040;
+}
 
 
 </style>
@@ -201,9 +209,14 @@ h2 {
 	<hr>
 	<div id='bodyContainer'>
 
-		<img href="" alt="picture">
-		<h2>About Project</h2>
-		<p>sdkfjsdlkfjlksdjfklsdjlfjsdlfj</p>
+		<img src="/resources/workoutandeat.jpg" alt="picture" >
+		
+		<h2>
+		<br>
+		About Project</h2>
+		<p>We create a easier way to bring you healthier life, input your information and we will create a customized plan for you.<br>
+			Don't hesitate, sign up and join us, then start to reach a bight future.
+		</p>
 
 
 	</div>
