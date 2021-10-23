@@ -128,9 +128,10 @@ hr {
 
 
 body>footer {
-	margin-left: 5%;
+	padding-left: 5%;
 	padding-top: 0px;
 	padding-bottom: 3%;
+	margin: 0%;
 }
 
 
@@ -153,6 +154,7 @@ body>footer {
 	padding-top: 3%;
 	padding-bottom: 35%;
 	background-size: cover;	
+	margin-right: 0%;
 	
 
 }

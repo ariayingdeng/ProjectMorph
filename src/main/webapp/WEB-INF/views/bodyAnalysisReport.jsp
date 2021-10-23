@@ -18,8 +18,7 @@
 
 body {
 	display: flex;
-	flex-direction: column;
-	
+	flex-direction: column;	
 	background-color: lavender;
 	font-family: calibri;
 	min-height: 70vw;
@@ -135,10 +134,12 @@ hr {
 
 
 body>footer {
-	margin-left: 5%;
+	padding-left: 5%;
 	padding-top: 0px;
 	padding-bottom: 3%;
+	margin: 0%;
 }
+
 
 /* header css end */
 
