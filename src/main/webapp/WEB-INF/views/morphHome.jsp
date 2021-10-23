@@ -127,9 +127,13 @@ hr {
 }
 
 
-footer small{
-	margin-left: 2%;
+body>footer {
+	margin-left: 5%;
+	padding-top: 0px;
+	padding-bottom: 3%;
 }
+
+
 
 
 
@@ -188,11 +192,11 @@ footer small{
 			<nav>
 				<aside id="firstAside">
 					<form action="/" method="POST" name="">
-					<a href="javascript:document.@name.submit()">Body Information</a>
+					<a href="javascript:document.@name.submit()">Body Info</a>
 					</form>
 					<form action="/bodyAnalysisReport" method="POST" name="analysisReportForm">
 					<input type="hidden" name="analysisReport" value="analysisReport" />
-					<a href="javascript:document.analysisReportForm.submit()">Analysis Report</a> 
+					<a href="javascript:document.analysisReportForm.submit()">Analysis</a> 
 					</form>
 					<form action="/" method="POST" name="">
 					<a href="javascript:document.@name.submit()">Workout Plans</a>

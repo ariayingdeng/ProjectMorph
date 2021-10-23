@@ -32,6 +32,7 @@ body {
 /* header css start */
 
 
+
 #myHeader {
 	display: grid;
 	grid-template-columns: 25% 55% 20%;
@@ -128,14 +129,17 @@ body {
 
 hr {
 	heigth: 2px;
-	width: 95%;
+	width: 100%;
 	border: 2px double rgb(139, 69, 19);
 }
 
 
-footer small{
-	margin-left: 2%;
+body>footer {
+	margin-left: 5%;
+	padding-top: 0px;
+	padding-bottom: 3%;
 }
+
 /* header css end */
 
 
@@ -254,27 +258,26 @@ tr, td, th {
 		<div id='navContainer'>
 			<nav>
 				<aside id="firstAside">
-					<form action="/bodyReport" method="POST" name="">
-						<a href="javascript:document.@name.submit()">Body Information</a>
+					<form action="/" method="POST" name="">
+					<a href="javascript:document.@name.submit()">Body Info</a>
 					</form>
-					<form action="/bodyReport" method="POST" name="analysisReportForm">
-						<input type="hidden" name="analysisReport" value="analysisReport" />
-						<a href="javascript:document.analysisReportForm.submit()">Analysis
-							Report</a>
+					<form action="/bodyAnalysisReport" method="POST" name="analysisReportForm">
+					<input type="hidden" name="analysisReport" value="analysisReport" />
+					<a href="javascript:document.analysisReportForm.submit()">Analysis</a> 
 					</form>
-					<form action="/bodyReport" method="POST" name="">
-						<a href="javascript:document.@name.submit()">Workout Plansn</a>
+					<form action="/" method="POST" name="">
+					<a href="javascript:document.@name.submit()">Workout Plans</a>
 					</form>
-					<form action="/bodyReport" method="POST" name="">
-						<a href="javascript:document.@name.submit()">Meal Plans</a>
+					<form action="/" method="POST" name="">
+					<a href="javascript:document.@name.submit()">Meal Plans</a>
 					</form>
-					<form action="/bodyReport" method="POST" name="">
-						<a href="javascript:document.@name.submit()">Check-In</a>
+					<form action="/" method="POST" name="">
+					<a href="javascript:document.@name.submit()">Check-In</a>
 					</form>
-					<form action="/bodyReport" method="POST" name="">
-						<a href="javascript:document.@name.submit()">Community</a>
+					<form action="/" method="POST" name="">
+					<a href="javascript:document.@name.submit()">Community</a>
 					</form>
-
+					
 				</aside>
 			</nav>
 
