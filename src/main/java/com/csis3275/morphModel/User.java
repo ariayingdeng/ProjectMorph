@@ -23,7 +23,7 @@ public class User {
 	@Column(name="birthdate", nullable=true)
 	private String birthdate;
 	
-	@Column	(name="email", nullable=false)
+	@Column	(name="email", nullable=false, unique=true)
 	private String email;
 	
 	@Transient
