@@ -26,12 +26,18 @@ body {
 	
 }
 
-#myHeader {
+
+.myHeader {
 	display: grid;
 	grid-template-columns: 25% 55% 20%;
 	grid-template-rows: 50% 50%;
 	padding: 0%;
-	height: 9%;
+	height: 5%;
+	--block-spacing-vertical: 0px;
+}
+
+.myHeader form {
+	
 }
 
 #bodyContainer {
@@ -46,7 +52,8 @@ body {
 		sans-serif;
 	margin-bottom: 0%;
 	grid-colum: 1;
-	grid-row: 1/-1;
+	grid-row: 1/3;
+	padding-top: 5%;
 }
 
 #headerLetter img {
@@ -183,17 +190,18 @@ body>footer {
 
 </head>
 <body>
-	<header id="myHeader">
+	<div class="myHeader">
 		
-		<form action="/" method="POST" name="morphHome">
+		<form action="/" method="POST" name="morphHome"></form>
 		<h1 id='headerLetter'>
+		
 			<input type="hidden" name="morphHome" value="/" >
 			<a href="javascript:document.morphHome.submit()">
 			<img src="/resources/Group_Logo.png" class="logo" alt="Morph Icon" />
 			</a>
 			MORPH
 		</h1>
-		</form>
+		
 		
 		
 		<div id='navContainer'>
@@ -236,7 +244,7 @@ body>footer {
 			</aside>
 		</c:if>
 
-	</header>
+	</div>
 	<hr>
 	<div id='bodyContainer'>
 

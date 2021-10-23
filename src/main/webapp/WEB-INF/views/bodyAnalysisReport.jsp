@@ -47,6 +47,7 @@ body {
 	margin-bottom: 0%;
 	grid-colum: 1;
 	grid-row: 1/-1;
+	padding-top: 5%;
 }
 
 #headerLetter img {
@@ -231,7 +232,8 @@ tr, td, th {
 </head>
 <body>
 	<header id="myHeader">
-		<form action="/" method="POST" name="morphHome">
+	
+		<form action="/" method="POST" name="morphHome"></form>
 			<h1 id='headerLetter'>
 				<input type="hidden" name="morphHome" value="/"> <a
 					href="javascript:document.morphHome.submit()"> <img
@@ -239,7 +241,7 @@ tr, td, th {
 				</a>
 				MORPH
 			</h1>
-		</form>
+		
 
 		<div id='navContainer'>
 			<nav>
