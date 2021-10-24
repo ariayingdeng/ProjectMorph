@@ -253,8 +253,8 @@ tr, td, th {
 		<div id='navContainer'>
 			<nav>
 				<aside id="firstAside">
-					<form action="/" method="POST" name="">
-						<a href="javascript:document.@name.submit()">Body Info</a>
+					<form action="/bodyInfoInput" method="POST" name="bodyInfoInput">
+					<a href="javascript:document.bodyInfoInput.submit()">Body Info</a>
 					</form>
 					<form action="/bodyAnalysisReport" method="POST"
 						name="analysisReportForm">

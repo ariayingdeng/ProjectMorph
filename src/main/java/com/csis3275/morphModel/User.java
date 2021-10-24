@@ -7,9 +7,11 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+
 @Entity
 @Table(name="users")
 public class User {
+
 	@Id
 	@GeneratedValue
 	private int id;
@@ -29,17 +31,33 @@ public class User {
 	@Transient
 	private String confirmPw;
 	
-	public User() {
-		
-	}
+	@Column(name="height", nullable=true)
+	private double height;
 	
-	public User(String username, String password, String birthdate, String email) {
-		super();
-		this.username = username;
-		this.password = password;
-		this.birthdate = birthdate;
-		this.email = email;
-	}
+	@Column(name="weight", nullable=true)
+	private double weight;
+	
+	@Column(name="age", nullable=true)
+	private int age;
+	
+	@Column(name="gender", nullable=true)
+	private String gender;
+	
+	@Column(name="bodyFat", nullable=true)
+	private double bodyFat;
+	
+	@Column(name="activity", nullable=true)
+	private int activity;
+	
+	@Column(name="BMI", nullable=true)
+	private double BMI;
+	
+	@Column(name="BMR", nullable=true)
+	private int BMR;
+	
+	@Column(name="TDEE", nullable=true)
+	private int TDEE;
+	
 	public int getId() {
 		return id;
 	}
@@ -70,14 +88,64 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
 	public String getConfirmPw() {
 		return confirmPw;
 	}
-
 	public void setConfirmPw(String confirmPw) {
 		this.confirmPw = confirmPw;
 	}
-	
-	
+	public double getHeight() {
+		return height;
+	}
+	public void setHeight(double height) {
+		this.height = height;
+	}
+	public double getWeight() {
+		return weight;
+	}
+	public void setWeight(double weight) {
+		this.weight = weight;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	public double getBodyFat() {
+		return bodyFat;
+	}
+	public void setBodyFat(double bodyFat) {
+		this.bodyFat = bodyFat;
+	}
+	public int getActivity() {
+		return activity;
+	}
+	public void setActivity(int activity) {
+		this.activity = activity;
+	}
+	public double getBMI() {
+		return BMI;
+	}
+	public void setBMI(double bMI) {
+		BMI = bMI;
+	}
+	public int getBMR() {
+		return BMR;
+	}
+	public void setBMR(int bMR) {
+		BMR = bMR;
+	}
+	public int getTDEE() {
+		return TDEE;
+	}
+	public void setTDEE(int tDEE) {
+		TDEE = tDEE;
+	}
 }
