@@ -19,13 +19,19 @@ public class I1_bodyInfo_jch_02 {
 	@Autowired
 	UserRepository userRepo;
 	
-	@RequestMapping("/")
+	@RequestMapping("/bodyInfoInput")
+	@PostMapping("/bodyInfoInput")
 	public String bodyAnalysis(@ModelAttribute("analysis")User user, Model model, HttpSession session) {
+		if (session.getAttribute("loggedIn") != null && (boolean) session.getAttribute("loggedIn")) {
+			User loggedUser = userRepo.findById((int) session.getAttribute("userId"));
+			model.addAttribute("loggedIn", loggedUser.getUsername());
 			int id = (int) session.getAttribute("userId");
 			User thisUser = (User) userRepo.findById(id);
 			model.addAttribute("analysis",user);
 			model.addAttribute("userName", thisUser.getUsername());
-			return "bodyAnalysis";
+			return "bodyInfo";
+		}
+		return "userLogin";
 	}
 	
 	@PostMapping("/bodyAnalysis")
@@ -39,6 +45,6 @@ public class I1_bodyInfo_jch_02 {
 		thisUser.setBodyFat(user.getBodyFat());
 		thisUser.setActivity(user.getActivity());
 
-		return "bodyAnalysis";
+		return "bodyAnalysisReport";
 	}
 }
