@@ -156,12 +156,22 @@ main {
 	padding-top: 4%;
 }
 
+<<<<<<< HEAD
 .container #loginBtn {
 	width: 200px;
 	margin: 5 auto;
+=======
+#loginBtn {
+	display: block;
+	width: 200px;
+	margin: 0 auto;
+	
+	
+>>>>>>> f51f266066cb7a380b3e8359fa31fd7b831972e1
 }
 
 #newBtn {
+	display: block;
 	width: 300px;
 	margin: 0 auto;;
 }
