@@ -17,6 +17,7 @@ import com.csis3275.morphRepository.UserRepository;
 
 
 
+
 @Controller
 public class I1_bodyReportController_tch_06 {
 	
@@ -47,20 +48,34 @@ public class I1_bodyReportController_tch_06 {
 			// Query the data from database
 			
 			
-			// Create a report for user
-			String age = "40";
-			String weight = "75";
-			String height = "170";
-			String gender = "Male";
-			String bodyFat = "18";
-			int exercise = 2;
+			int id = (int) session.getAttribute("userId");
+			User thisUser = (User) userRepo.findById(id);	
 			
-			report = new BodyReport(name, age, height, weight, gender, bodyFat, exercise);
+			if (thisUser.getGender() == null) {
+				model.addAttribute("analysis",new User());
+				model.addAttribute("userName", thisUser.getUsername());
+				return "bodyInfo";
+			}
+					
+			
+			double bodyFat;
+			if (thisUser.getBodyFat() == 0)
+				bodyFat = -1;
+			else 
+				bodyFat = thisUser.getBodyFat();
+			
+			// Create a report for user
+			
+			
+			report = new BodyReport(thisUser.getUsername(), thisUser.getAge(), thisUser.getHeight(), thisUser.getWeight(), 
+					thisUser.getGender(), bodyFat, thisUser.getActivity());
 			
 
 			
 			model.addAttribute("bodyReport", report);
 			fillTheSheet(model, report);
+			
+
 			
 			
 			return "bodyAnalysisReport";
@@ -88,21 +103,7 @@ public class I1_bodyReportController_tch_06 {
 		model.addAttribute("lowerCarbonCarb", caloryReport.getCarb20());
 		model.addAttribute("higherCarbonProtein", caloryReport.getProtein30());
 		model.addAttribute("higherCarbonFat", caloryReport.getFat20());
-		model.addAttribute("higherCarbonCarb", caloryReport.getCarb50());
-//		model.addAttribute(report)
-//		model.addAttribute(report)
-//		model.addAttribute(report)
-//		model.addAttribute(report)
-//		model.addAttribute(report)
-//		model.addAttribute(report)
-//		model.addAttribute(report)
-//		model.addAttribute(report)
-//		model.addAttribute(report)
-//		model.addAttribute(report)
-		
-		
-		
-		
+		model.addAttribute("higherCarbonCarb", caloryReport.getCarb50());		
 		
 	}
 }

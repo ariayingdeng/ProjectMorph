@@ -3,16 +3,14 @@ package com.csis3275.morphModel;
 
 public class BodyReport {
 	private String name;
-	private String age;
-	private String height;
-	private String weight;
-	private String bodyFat;
+	private int age;
+	private double height;
+	private double weight;
+	private double bodyFat;
 	private String gender;
 	private double BMI;
 	private int BMR;
-	private int fat;
-	private double heightNum;
-	private double weightNum;
+	private int fat;	
 	private int TDEE;	
 	private int exercise;
 	
@@ -31,21 +29,15 @@ public class BodyReport {
 	 * @param weight user's weight
 	 * @param bodyFat user's bodyFat
 	 */
-	public BodyReport(String name, String age, String height, String weight, String gender, String bodyFat, int exercise) {
+	public BodyReport(String name, int age, double height, double weight, String gender, double bodyFat, int exercise) {
 		this.name = name;
 		this.age = age;
 		this.height = height;
 		this.weight = weight;
 		this.gender = gender;
 		this.bodyFat = bodyFat;
-		this.exercise = exercise;
-		heightNum = Double.parseDouble(height);
-		weightNum = Double.parseDouble(weight);
-		try {
-			fat = Integer.parseInt(bodyFat);
-		} catch (Exception exception) {
-			fat = -1;
-		}
+		this.exercise = exercise;	
+		
 		gettBMR();		
 		this.BMI = gettBMI();
 		generatePersonalCal();
@@ -70,7 +62,7 @@ public class BodyReport {
 	public double gettBMI() {		
 		
 		// BMI formula
-		double BMI = weightNum / (heightNum * heightNum / 10000); 			
+		double BMI = weight / (height * height / 10000); 			
 		
 		return BMI;
 	}
@@ -83,11 +75,11 @@ public class BodyReport {
 	public double gettBMR() {
 		double BMRNum;
 		if (gender.equals("Male")) {
-			BMRNum = 88.639 + (13.397 * weightNum) + (4.799 * heightNum) - 
-					(5.677 * Integer.parseInt(age));
+			BMRNum = 88.639 + (13.397 * weight) + (4.799 * weight) - 
+					(5.677 * age);
 		} else {
-			BMRNum = 447.593 + (9.247 * weightNum) + (3.098 * heightNum) -
-					(4.330 * Integer.parseInt(age));
+			BMRNum = 447.593 + (9.247 * weight) + (3.098 * weight) -
+					(4.330 * age);
 		}
 		
 		BMR = (int) BMRNum;
@@ -128,24 +120,24 @@ public class BodyReport {
 		this.name = name;
 	}
 	
-	public String getHeight() {
+	public double getHeight() {
 		return height;
 	}
-	public void setHeight(String height) {
+	public void setHeight(double height) {
 		this.height = height;
 	}
 	
-	public String getWeight() {
+	public double getWeight() {
 		return weight;
 	}
-	public void setWeight(String weight) {
+	public void setWeight(double weight) {
 		this.weight = weight;
 	}
 	
-	public String getBodyFat() {
+	public double getBodyFat() {
 		return bodyFat;
 	}
-	public void setBodyFat(String bodyFat) {
+	public void setBodyFat(int bodyFat) {
 		this.bodyFat = bodyFat;
 	}
 	
@@ -156,10 +148,10 @@ public class BodyReport {
 		this.gender = gender;
 	}
 	
-	public String getAge() {
+	public int getAge() {
 		return age;
 	}	
-	public void setAge(String age) {
+	public void setAge(int age) {
 		this.age = age;
 	}
 
@@ -169,23 +161,7 @@ public class BodyReport {
 
 	public void setFat(int fat) {
 		this.fat = fat;
-	}
-
-	public double getHeightNum() {
-		return heightNum;
-	}
-
-	public void setHeightNum(double heightNum) {
-		this.heightNum = heightNum;
-	}
-
-	public double getWeightNum() {
-		return weightNum;
-	}
-
-	public void setWeightNum(double weightNum) {
-		this.weightNum = weightNum;
-	}
+	}	
 
 	public int getTDEE() {
 		return TDEE;
