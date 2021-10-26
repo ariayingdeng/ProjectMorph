@@ -157,11 +157,15 @@ main {
 }
 
 #loginBtn {
+	display: block;
 	width: 200px;
 	margin: 0 auto;
+	
+	
 }
 
 #newBtn {
+	display: block;
 	width: 300px;
 	margin: 0 auto;
 }

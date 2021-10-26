@@ -165,6 +165,7 @@ body>footer {
 }
 
 #btn {
+	display: block;
 	margin: 0 auto;
 	width: 35%;
 }
