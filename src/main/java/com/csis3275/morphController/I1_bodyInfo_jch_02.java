@@ -57,7 +57,7 @@ public class I1_bodyInfo_jch_02 {
 		
 		BodyReport report = new BodyReport(thisUser.getUsername(), thisUser.getAge(), thisUser.getHeight(), thisUser.getWeight(), 
 				thisUser.getGender(), bodyFat, thisUser.getActivity());
-		
+		model.addAttribute("loggedIn", thisUser.getUsername());
 		model.addAttribute("bodyReport", report);
 		fillTheSheet(model, report);
 		thisUser.setBMI(report.getBMI());

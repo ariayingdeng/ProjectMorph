@@ -1,5 +1,6 @@
 package com.csis3275.morphModel;
 
+import java.text.DecimalFormat;
 
 public class BodyReport {
 	private String name;
@@ -48,6 +49,8 @@ public class BodyReport {
 	
 	
 	public double getBMI() {
+		DecimalFormat dFormat = new DecimalFormat("#.##");
+		BMI = Double.parseDouble(dFormat.format(BMI));
 		return BMI;
 	}
 
