@@ -156,14 +156,14 @@ main {
 	padding-top: 4%;
 }
 
-#loginBtn {
+.container #loginBtn {
 	width: 200px;
-	margin: 0 auto;
+	margin: 5 auto;
 }
 
 #newBtn {
 	width: 300px;
-	margin: 0 auto;
+	margin: 0 auto;;
 }
 
 hr {
