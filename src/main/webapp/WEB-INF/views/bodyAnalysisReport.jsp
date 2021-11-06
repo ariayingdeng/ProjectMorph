@@ -273,6 +273,9 @@ tr, td, th {
 					<form action="/" method="POST" name="">
 						<a href="javascript:document.@name.submit()">Community</a>
 					</form>
+					<form action="/userSetting" method="POST" name="userSetting">
+					<a href="javascript:document.userSetting.submit()">Setting</a>
+					</form>
 
 				</aside>
 			</nav>
