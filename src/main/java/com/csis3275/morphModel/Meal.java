@@ -296,7 +296,7 @@ public class Meal {
 		return myBreakfast;
 	}
 
-	public ArrayList<Meal> generateLunch(double proteinTarget, double proteinAmount, double fatTarget, double fatAmount) {
+	public ArrayList<Meal> generateLunch(double current, double target) {
 		ArrayList<Meal> myLunch = new ArrayList<Meal>();
 		myLunch.add(generateProtein());
 		myLunch.add(generateVegetable());
