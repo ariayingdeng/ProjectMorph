@@ -163,6 +163,11 @@ body>footer {
 	background-position-x: 70%;
 	background-position-y: 30%;
 }
+.alert{
+	grid-column:2;
+	grid-row:2;
+	margin: 0 auto;
+}
 
 #btn {
 	display: block;
@@ -193,8 +198,6 @@ h1, h6, #ttl, .alert {
 				src="/resources/Group_Logo.png" class="logo" alt="Morph Icon" />
 			</a> MORPH
 		</h1>
-
-
 
 		<div id='navContainer'>
 			<nav>
@@ -274,7 +277,13 @@ h1, h6, #ttl, .alert {
 			</form:form>
 
 		</div>
+		<c:if test="${ updateSuccess !=null }">
+			<div class="alert alert-success" role="alert">${updateSuccess}</div>
+	    </c:if>
+		
 	</div>
+
+	
 
 
 	<footer>

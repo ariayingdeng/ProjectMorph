@@ -28,27 +28,38 @@ public class I2_userSettingController_jch_02 {
 			User thisUser = (User) userRepo.findById(id);
 			model.addAttribute("setting",user);
 			model.addAttribute("userName", thisUser.getUsername());
-			return "userSetting";
+			return "/userSetting";
 		}
-		return "userLogin";
+		return "/userLogin";
 	}
 	
 	@PostMapping("/userSettingInput")
 	public String userSettingUpdate(@ModelAttribute("setting")User user, Model model, HttpSession session) {
 		int id = (int) session.getAttribute("userId");
-		User thisUser = (User) userRepo.findById(id);			
+		User thisUser = (User) userRepo.findById(id);
+		model.addAttribute("userName",thisUser.getUsername());
+		
+		boolean update = false;
 		if(!user.getUsername().equals("")){
 			thisUser.setUsername(user.getUsername());
+			update=true;
 		}
 
 		if(!user.getPassword().equals("")){
 			thisUser.setPassword(user.getPassword());
+			update=true;
 		}
 		
 		if(!user.getEmail().equals("")){
 			thisUser.setEmail(user.getEmail());
+			update=true;
+		}
+
+		if(update) {
+			String success = "Hi " + thisUser.getUsername() + " , You have successfully updated your Information !";
+			model.addAttribute("updateSuccess", success);
 		}
 		
-		return "morphHome";
+		return "/userSetting";
 	}
 }
