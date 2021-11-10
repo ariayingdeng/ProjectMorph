@@ -234,6 +234,33 @@ tr, td, th {
 	background-color: LavenderBlush;
 	color: #404040;
 }
+
+#planContainer {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 2%;
+}
+
+.meals {
+	margin: 5%;
+	border: 1px solid black;
+	
+	
+	background-color: #D3D3D3;	
+}
+
+.meals h2 {
+	
+	background-color: LavenderBlush;
+	text-align: center;
+}
+
+.meals h3 {
+	
+	padding: 0 5%;
+	font-size: 1.2rem;
+}
+
 </style>
 </head>
 <body>
@@ -303,9 +330,9 @@ tr, td, th {
 	<div id="planContainer">
 
 		<aside class='meals'>
-			<h2>Breakfast</h2>
-			<h3>Meal Name: ${ breakfastName }</h3>
-			<h3>Serve: ${ serve }</h3>
+			<h2>BREAKFAST</h2>
+			<h3>Meal Name:<br>${ breakfastName }</h3>
+			<h3>Serve: ${ serveBreakfast }</h3>
 			<h3>Carbon: ${ breakfastCarbon }</h3>
 			<h3>Protein: ${ breakfastProtein }</h3>
 			<h3>Fat: ${ breakfastFat }</h3>
@@ -313,9 +340,9 @@ tr, td, th {
 		</aside>
 		
 		<aside class='meals'>
-			<h2>Lunch</h2>
-			<h3>Meal Name: ${ lunchName }</h3>
-			<h3>Serve: ${ serve }</h3>
+			<h2>LUNCH</h2>
+			<h3>Meal Name:<br>${ lunchName }</h3>
+			<h3>Serve: ${ serveLunch }</h3>
 			<h3>Carbon: ${ lunchCarbon }</h3>
 			<h3>Protein: ${ lunchProtein }</h3>
 			<h3>Fat: ${ lunchFat }</h3>
@@ -323,9 +350,9 @@ tr, td, th {
 		</aside>
 		
 		<aside class='meals'>
-			<h2>Dinner</h2>
-			<h3>Meal Name: ${ dinnerName }</h3>
-			<h3>Serve: ${ serve }</h3>
+			<h2>DINNER</h2>
+			<h3>Meal Name:<br>${ dinnerName }</h3>
+			<h3>Serve: ${ serveDinner }</h3>
 			<h3>Carbon: ${ dinneCarbon }</h3>
 			<h3>Protein: ${ dinneProtein }</h3>
 			<h3>Fat: ${ dinneFat }</h3>

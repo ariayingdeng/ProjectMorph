@@ -69,6 +69,7 @@ public class Meal {
 		private double fat;
 
 		private BreakFast(String name, double calories, double carbon, double protein, double fat) {
+			this.name = name;
 			this.calories = calories;
 			this.carbon = carbon;
 			this.protein = protein;
@@ -103,6 +104,7 @@ public class Meal {
 		private double fat;
 
 		private Dinner(String name, double calories, double carbon, double protein, double fat) {
+			this.name = name;
 			this.calories = calories;
 			this.carbon = carbon;
 			this.protein = protein;
@@ -131,6 +133,7 @@ public class Meal {
 		private double fat;
 
 		private HighProtein(String name, double calories, double carbon, double protein, double fat) {
+			this.name = name;
 			this.calories = calories;
 			this.carbon = carbon;
 			this.protein = protein;
@@ -147,8 +150,8 @@ public class Meal {
 	}
 
 	private enum Fat {
-		Oliver_Oil("Oliver Oil", 8.84, 0, 0, 100), Avocado_Oil("Avocado Oil", 8.84, 0, 0, 100),
-		Grape_Oil("Grape Oil", 8.84, 0, 0, 100);
+		Oliver_Oil("Oliver Oil", 8.84, 0, 0, 1), Avocado_Oil("Avocado Oil", 8.84, 0, 0, 1),
+		Grape_Oil("Grape Oil", 8.84, 0, 0, 1);
 
 		private String name;
 		private double calories;
@@ -157,6 +160,7 @@ public class Meal {
 		private double fat;
 
 		private Fat(String name, double calories, double carbon, double protein, double fat) {
+			this.name = name;
 			this.calories = calories;
 			this.carbon = carbon;
 			this.protein = protein;
@@ -186,6 +190,7 @@ public class Meal {
 		private double fat;
 
 		private Vegetable(String name, double calories, double carbon, double protein, double fat) {
+			this.name = name;
 			this.calories = calories;
 			this.carbon = carbon;
 			this.protein = protein;
@@ -296,7 +301,7 @@ public class Meal {
 		return myBreakfast;
 	}
 
-	public ArrayList<Meal> generateLunch(double current, double target) {
+	public ArrayList<Meal> generateLunch() {
 		ArrayList<Meal> myLunch = new ArrayList<Meal>();
 		myLunch.add(generateProtein());
 		myLunch.add(generateVegetable());
@@ -336,6 +341,7 @@ public class Meal {
 			break;
 		}
 		
+		System.out.println(meat);
 		return meat;
 	}
 	
@@ -403,7 +409,7 @@ public class Meal {
 	private Meal generateOil() {
 		Meal oil = null;
 		Random random = new Random();
-		int meatNumber = random.nextInt(8);
+		int meatNumber = random.nextInt(3);
 		switch (meatNumber) {
 		case 0:
 			oil = getOilDetail(Fat.Avocado_Oil);
@@ -430,6 +436,18 @@ public class Meal {
 		oil.setFat(detail[3]);
 		
 		return oil;
+	}
+	
+	@Override
+	public String toString() {
+		String result = "";
+		result += "mealName: " + mealName + "\n";
+		result += "Calories: " + calories + "\n";
+		result += "Carbon: " + carbon + "\n";
+		result += "Protein: " + protein + "\n";
+		result += "Fat: " + fat + "\n";
+		
+		return result;
 	}
 
 }
