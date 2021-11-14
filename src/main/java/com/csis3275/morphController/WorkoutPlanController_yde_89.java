@@ -83,5 +83,10 @@ public class WorkoutPlanController_yde_89 {
 		return "userLogin";
 	}
 	
+	@PostMapping("/newPlan")
+	public String generateNewPlan(Model model, HttpSession session) {
+		return "redirect:/workoutplan";
+	}
+	
 }
 	

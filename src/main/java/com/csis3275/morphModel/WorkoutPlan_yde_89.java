@@ -21,7 +21,7 @@ public class WorkoutPlan_yde_89 {
 	public WorkoutPlan_yde_89(double weight) {
 		random = new Random();
 		caloriesCalculator = new CaloriesCalculator_yde_89();
-		caloriesCalculator.setDuration(30);
+		caloriesCalculator.setDuration(40);
 		caloriesCalculator.setWeight(weight);
 		lightExercises = new HashMap<>();
 		moderateExercises = new HashMap<>();
