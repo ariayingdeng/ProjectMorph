@@ -2,19 +2,25 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-
 <!doctype html>
 <html lang="en">
 <head>
+<!-- Required meta tags -->
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Bootstrap CSS -->
 <link rel="stylesheet"
 	href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
-<title>Sign Up</title>
-<style type="text/css">
+<title>Group Morph</title>
+<style>
 body {
+	display: flex;
+	flex-direction: column;
 	background-color: lavender;
+	font-family: calibri;
+	width: 100%;
+	color: rgb(139, 69, 19);
 }
 
 /* CSS style for header beginning*/
@@ -23,8 +29,8 @@ body {
 	grid-template-columns: 25% 55% 20%;
 	grid-template-rows: 50% 50%;
 	padding: 0%;
-	height: 5%;
-	--block-spacing-vertical: 0px;
+	height: 5%; -
+	-block-spacing-vertical: 0px;
 }
 
 .myHeader form {
@@ -87,7 +93,6 @@ body {
 	font-weight: 600;
 	padding-bottom: 1%;
 	vertical-align: bottom;
-	
 }
 
 #navContainer {
@@ -102,7 +107,7 @@ body {
 }
 
 #secondAside {
-    display: flex;
+	display: flex;
 	justify-content: center;
 	grid-row: 1;
 	grid-column: 3;
@@ -124,7 +129,6 @@ body {
 	border: 2px double rgb(139, 69, 19);
 }
 
-
 body>footer {
 	padding-left: 5%;
 	padding-top: 0px;
@@ -134,154 +138,176 @@ body>footer {
 }
 
 /* CSS style for header ending */
-
-main {
-	height: 42rem;
+span {
+	font-weight: bold;
 }
 
-.error {
-	color: red;
-	font-style: italic;
-}
-
-#workoutimg {
-	width: 90%;
-	height: auto;
-}
-
-#signupBtn {
-	display: block;
-	width: 250px;
-	margin: 0 auto;
-}
-.alert {
-	color: red;
-	font-style: italic;
-	font-size: 110%;
-	text-align: center;
-	padding-top: 4%;
+th {
+	font-weight: bold;
+	color: grey;
 }
 </style>
+
 </head>
 <body>
-<div class="myHeader">
-		
+	<div class="myHeader">
+
 		<form action="/" method="POST" name="morphHome"></form>
 		<h1 id='headerLetter'>
-		
-			<input type="hidden" name="morphHome" value="/" >
-			<a href="javascript:document.morphHome.submit()">
-			<img src="/resources/Group_Logo.png" class="logo" alt="Morph Icon" />
-			</a>
-			MORPH
+
+			<input type="hidden" name="morphHome" value="/"> <a
+				href="javascript:document.morphHome.submit()"> <img
+				src="/resources/Group_Logo.png" class="logo" alt="Morph Icon" />
+			</a> MORPH
 		</h1>
-		
-		
-		
+
+
+
 		<div id='navContainer'>
 			<nav>
 				<aside id="firstAside">
 					<form action="/bodyInfoInput" method="POST" name="bodyInfoInput">
-					<a href="javascript:document.bodyInfoInput.submit()">Body Info</a>
+						<a href="javascript:document.bodyInfoInput.submit()">Body Info</a>
 					</form>
-					<form action="/bodyAnalysisReport" method="POST" name="analysisReportForm">
-					<input type="hidden" name="analysisReport" value="analysisReport" />
-					<a href="javascript:document.analysisReportForm.submit()">Analysis</a> 
+					<form action="/bodyAnalysisReport" method="POST"
+						name="analysisReportForm">
+						<input type="hidden" name="analysisReport" value="analysisReport" />
+						<a href="javascript:document.analysisReportForm.submit()">Analysis</a>
 					</form>
 					<form action="/workoutplan" method="POST" name="workoutPlan">
-					<a href="javascript:document.workoutPlan.submit()">Workout Plans</a>
+						<a href="javascript:document.workoutPlan.submit()">Workout
+							Plans</a>
 					</form>
 					<form action="/" method="POST" name="">
-					<a href="javascript:document.@name.submit()">Meal Plans</a>
+						<a href="javascript:document.@name.submit()">Meal Plans</a>
 					</form>
 					<form action="/" method="POST" name="">
-					<a href="javascript:document.@name.submit()">Check-In</a>
+						<a href="javascript:document.@name.submit()">Check-In</a>
 					</form>
 					<form action="/" method="POST" name="">
-					<a href="javascript:document.@name.submit()">Community</a>
+						<a href="javascript:document.@name.submit()">Community</a>
 					</form>
-					
+
 				</aside>
 			</nav>
 
 		</div>
 		<c:if test="${ loggedIn == null }">
 			<aside id="secondAside">
-			<form action="/loginPage" method="POST" name="loginPage"></form>	
-				<a href="javascript:document.loginPage.submit()">Login</a> 
-				
-			<form action="/registerPage" method="POST" name="registerPage"></form>
+				<form action="/loginPage" method="POST" name="loginPage"></form>
+				<a href="javascript:document.loginPage.submit()">Login</a>
+
+				<form action="/registerPage" method="POST" name="registerPage"></form>
 				<a href="javascript:document.registerPage.submit()">Sign Up</a>
-				
+
 			</aside>
 
 		</c:if>
 		<c:if test="${ loggedIn != null }">
 			<aside id="secondAside">
-				<a href="" id="userAccount">${ loggedIn }, Log Out</a>
+				<form action="/logOut" method="POST" name="logOut"></form>
+				<a href="javascript:document.logOut.submit()">${ loggedIn }, Log
+					Out</a>
 			</aside>
 		</c:if>
 
 	</div>
 	<hr id="headerHr">
-	
-	<main class="container">
+
+	<div class="container">
+		<span>Please choose your weekly work-out plan from light
+			exercises to vigorous exercises by all means.</span> <br>
+		<br>
 		<div class="grid">
-			<div>
-				<h1>Create a New Account</h1>
-				<h4>Easier than workout!</h4>
-				<img src="/resources/workoutimg.png" id="workoutimg">
 
+			<div>
+				<h3>Light Exercises</h3>
+				<table>
+					<tr>
+						<th>Day</th>
+						<th>Exercise</th>
+						<th>Calories</th>
+					</tr>
+					<tr>
+						<td>${day1 }</td>
+						<td>${exercise1 }</td>
+						<td>${calories1 }</td>
+					</tr>
+					<tr>
+						<td>${day2 }</td>
+						<td>${exercise2 }</td>
+						<td>${calories2 }</td>
+					</tr>
+					<tr>
+						<td>${day3 }</td>
+						<td>${exercise3 }</td>
+						<td>${calories3 }</td>
+					</tr>
+				</table>
 			</div>
 
 			<div>
-
-
-				<!-- Grid -->
-				<div class="flex">
-					<form:form method="POST" action="/newUser" modelAttribute="newUser">
-
-						<!-- Markup example 1: input is inside label -->
-						<label for="username"> User name <input type="text"
-							id="username" name="username" placeholder="User name" required>
-						</label>
-						<form:errors path="username" cssClass="error" />
-
-						<label for="email">Email address<input type="email"
-							id="email" name="email" placeholder="Email address" required>
-						</label>
-						<form:errors path="email" cssClass="error" />
-
-						<label for="birthdate">Date of birth</label>
-						<input type="date" id="birthdate" name="birthdate"
-							placeholder="Date of Birth" required>
-						<form:errors path="birthdate" cssClass="error" />
-
-						<label for="password">Password</label>
-						<input type="password" id="password" name="password"
-							placeholder="Your password" required>
-						<form:errors path="password" cssClass="error" />
-
-						<label for="confirmPw">Confirm your password</label>
-						<input type="password" id="confirmPw" name="confirmPw"
-							placeholder="Confirm your password" required>
-						<form:errors path="confirmPw" cssClass="error" />
-
-						<input type="submit" value="Sign Up" id="signupBtn">
-						
-						<c:if test="${ wrong !=null }">
-							<div class="alert alert-success" role="alert">${wrong}</div>
-						</c:if>
-
-					</form:form>
-				</div>
+				<h3>Moderate Exercises</h3>
+				<table>
+					<tr>
+						<th>Day</th>
+						<th>Exercise</th>
+						<th>Calories</th>
+					</tr>
+					<tr>
+						<td>${day1 }</td>
+						<td>${exercise4 }</td>
+						<td>${calories4 }</td>
+					</tr>
+					<tr>
+						<td>${day2 }</td>
+						<td>${exercise5 }</td>
+						<td>${calories5 }</td>
+					</tr>
+					<tr>
+						<td>${day3 }</td>
+						<td>${exercise6 }</td>
+						<td>${calories6 }</td>
+					</tr>
+				</table>
 			</div>
+
+			<div>
+				<h3>Vigorous Exercises</h3>
+				<table>
+					<tr>
+						<th>Day</th>
+						<th>Exercise</th>
+						<th>Calories</th>
+					</tr>
+					<tr>
+						<td>${day1 }</td>
+						<td>${exercise7 }</td>
+						<td>${calories7 }</td>
+					</tr>
+					<tr>
+						<td>${day2 }</td>
+						<td>${exercise8 }</td>
+						<td>${calories8 }</td>
+					</tr>
+					<tr>
+						<td>${day3 }</td>
+						<td>${exercise9 }</td>
+						<td>${calories9 }</td>
+					</tr>
+				</table>
+			</div>
+
+
 		</div>
 
-	</main>
-	
-		<footer>
+	</div>
+	<footer>
 		<small>&copy; 2021 by Group Morph. All rights reserved.</small>
 	</footer>
+
+
+
+
 </body>
 </html>

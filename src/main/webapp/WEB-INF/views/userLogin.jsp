@@ -215,8 +215,8 @@ h4 {
 					<input type="hidden" name="analysisReport" value="analysisReport" />
 					<a href="javascript:document.analysisReportForm.submit()">Analysis</a> 
 					</form>
-					<form action="/" method="POST" name="">
-					<a href="javascript:document.@name.submit()">Workout Plans</a>
+					<form action="/workoutplan" method="POST" name="workoutPlan">
+					<a href="javascript:document.workoutPlan.submit()">Workout Plans</a>
 					</form>
 					<form action="/" method="POST" name="">
 					<a href="javascript:document.@name.submit()">Meal Plans</a>
