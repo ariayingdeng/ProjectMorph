@@ -146,6 +146,16 @@ th {
 	font-weight: bold;
 	color: grey;
 }
+
+.container {
+	max-width: 90%;
+}
+
+#newPlanBtn {
+	display: block;
+	width: 18%;
+	margin: 0 auto;
+}
 </style>
 
 </head>
@@ -216,8 +226,7 @@ th {
 
 	<div class="container">
 		<span>Please choose your weekly work-out plan from light
-			exercises to vigorous exercises by all means.</span> <br>
-		<br>
+			exercises to vigorous exercises by all means. </span> <br> <br>
 		<div class="grid">
 
 			<div>
@@ -226,7 +235,7 @@ th {
 					<tr>
 						<th>Day</th>
 						<th>Exercise</th>
-						<th>Calories</th>
+						<th>Calories/40 minutes</th>
 					</tr>
 					<tr>
 						<td>${day1 }</td>
@@ -252,7 +261,7 @@ th {
 					<tr>
 						<th>Day</th>
 						<th>Exercise</th>
-						<th>Calories</th>
+						<th>Calories/40 minutes</th>
 					</tr>
 					<tr>
 						<td>${day1 }</td>
@@ -278,7 +287,7 @@ th {
 					<tr>
 						<th>Day</th>
 						<th>Exercise</th>
-						<th>Calories</th>
+						<th>Calories/40 minutes</th>
 					</tr>
 					<tr>
 						<td>${day1 }</td>
@@ -298,8 +307,10 @@ th {
 				</table>
 			</div>
 
-
 		</div>
+		<form:form method="POST" action="/newPlan" modelAttribute="newPlan">
+			<input type="submit" value="CHANGE PLAN" id="newPlanBtn">
+		</form:form>
 
 	</div>
 	<footer>
