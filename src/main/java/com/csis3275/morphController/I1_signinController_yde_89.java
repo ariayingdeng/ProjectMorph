@@ -18,7 +18,6 @@ import com.csis3275.morphRepository.UserRepository;
 public class I1_signinController_yde_89 {
 	
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
-
 	
 	@Autowired
 	UserRepository userRepo;
