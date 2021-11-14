@@ -9,7 +9,6 @@ import java.util.Random;
 public class WorkoutPlan_yde_89 {
 
 	private Random random;
-	private double totalCalories;
 	private CaloriesCalculator_yde_89 caloriesCalculator;
 
 	HashMap<Integer, LightExercise> lightExercises;
@@ -24,7 +23,6 @@ public class WorkoutPlan_yde_89 {
 		caloriesCalculator = new CaloriesCalculator_yde_89();
 		caloriesCalculator.setDuration(30);
 		caloriesCalculator.setWeight(weight);
-		totalCalories = 0;
 		lightExercises = new HashMap<>();
 		moderateExercises = new HashMap<>();
 		vigorousExercises = new HashMap<>();
@@ -32,13 +30,29 @@ public class WorkoutPlan_yde_89 {
 		moderateWorkoutPlan = new HashMap<>();
 		vigorousWorkoutPlan = new HashMap<>();
 	}
-
-	public double getCalories() {
-		return totalCalories;
+	
+	public HashMap<String, Double> getLightWorkoutPlan() {
+		return lightWorkoutPlan;
 	}
 
-	public void setCalories(double calories) {
-		this.totalCalories = calories;
+	public void setLightWorkoutPlan(HashMap<String, Double> lightWorkoutPlan) {
+		this.lightWorkoutPlan = lightWorkoutPlan;
+	}
+
+	public HashMap<String, Double> getModerateWorkoutPlan() {
+		return moderateWorkoutPlan;
+	}
+
+	public void setModerateWorkoutPlan(HashMap<String, Double> moderateWorkoutPlan) {
+		this.moderateWorkoutPlan = moderateWorkoutPlan;
+	}
+
+	public HashMap<String, Double> getVigorousWorkoutPlan() {
+		return vigorousWorkoutPlan;
+	}
+
+	public void setVigorousWorkoutPlan(HashMap<String, Double> vigorousWorkoutPlan) {
+		this.vigorousWorkoutPlan = vigorousWorkoutPlan;
 	}
 
 	public enum Day {
@@ -182,28 +196,28 @@ public class WorkoutPlan_yde_89 {
 		loadLightExercises();
 		loadModerateExercises();
 		loadVigorousExercises();
-		for (int n = 0; n < 3; n++) {
+		while (lightWorkoutPlan.size() < 3) {
 			randomNum = random.nextInt(lightExercises.size());
 			LightExercise lExercise = lightExercises.get(randomNum);
 			caloriesCalculator.setMet(lExercise.getMet());
 			calories = caloriesCalculator.calculateCaloriesBurned();
-			totalCalories += calories;
 			lightWorkoutPlan.put(lExercise.getExercise(), calories);
-			
+		}
+		while (moderateWorkoutPlan.size() < 3) {
 			randomNum = random.nextInt(moderateExercises.size());
 			ModerateExercise mExercise = moderateExercises.get(randomNum);
 			caloriesCalculator.setMet(mExercise.getMet());
 			calories = caloriesCalculator.calculateCaloriesBurned();
-			totalCalories += calories;
-			lightWorkoutPlan.put(mExercise.getExercise(), calories);
-			
+			moderateWorkoutPlan.put(mExercise.getExercise(), calories);
+		}
+		while (vigorousWorkoutPlan.size() < 3) {
 			randomNum = random.nextInt(vigorousExercises.size());
 			VigorousExercise vExercise = vigorousExercises.get(randomNum);
 			caloriesCalculator.setMet(vExercise.getMet());
 			calories = caloriesCalculator.calculateCaloriesBurned();
-			totalCalories += calories;
-			lightWorkoutPlan.put(mExercise.getExercise(), calories);
+			vigorousWorkoutPlan.put(vExercise.getExercise(), calories);
 		}
+
 
 	}
 
