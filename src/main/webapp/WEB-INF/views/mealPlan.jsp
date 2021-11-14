@@ -292,6 +292,11 @@ tr, td, th {
 	font-size: 1.5rem;
 }
 
+p {
+	padding-left: 2%;
+	color: red;
+}
+
 </style>
 </head>
 <body>
@@ -426,6 +431,8 @@ tr, td, th {
 
 
 	</div>
+	
+	<p>If you want to lose weight, eat 80% of portions. For gaining weight, eat 120% of portions.</p>
 	<footer>
 		<small>&copy; 2021 by Group Morph. All rights reserved.</small>
 	</footer>
