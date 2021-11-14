@@ -250,15 +250,46 @@ tr, td, th {
 }
 
 .meals h2 {
-	
+	margin-bottom: 0px;
 	background-color: LavenderBlush;
 	text-align: center;
+	font-family: Monaco Monospace;
 }
 
 .meals h3 {
 	
 	padding: 0 5%;
 	font-size: 1.2rem;
+	margin-bottom: 0px;
+}
+
+.meals h4 {
+	width: 95%;
+	margin-left: 2.5%;
+	font-size: 1rem;
+}
+
+.meals hr {
+	heigth: 1px;
+	width: 95%;
+	border: 0.1px solid black;
+}
+
+.smallh4 {
+	margin-bottom: 1%;
+}
+
+.meals .head {
+	font-size: 1.1rem;
+}
+
+.meals .smallh3 {
+	font-size: 1.1rem;
+}
+
+.meals .importanth3 {
+	font-family: Georgia Serif;
+	font-size: 1.5rem;
 }
 
 </style>
@@ -331,32 +362,66 @@ tr, td, th {
 
 		<aside class='meals'>
 			<h2>BREAKFAST</h2>
-			<h3>Meal Name:<br>${ breakfastName }</h3>
-			<h3>Serve: ${ serveBreakfast }</h3>
+			<h3 class="importanth3"><br>${ breakfastName }</h3>
+			<hr>
+			<h3 class= 'smallh3'>Calories:<br>${ breakfastCal }</h3>
+			<hr>
+			<h3 class= 'smallh3'>Servings:<br>${ serveBreakfast } portion(s)</h3>
+			<hr>
+			
+			<h4>${ breakfastWeight } g for ${ breakfastName }</h4>
+			<h4 class="smallh4 head">Nutrients:</h4>
+			<h4 class="smallh4">Carbon: ${ breakfastCarbon } g</h4>
+			<h4 class="smallh4">Protein: ${ breakfastProtein } g</h4>
+			<h4 class="smallh4">Fat: ${ breakfastFat } g</h4>			
+			<!--
 			<h3>Carbon: ${ breakfastCarbon }</h3>
 			<h3>Protein: ${ breakfastProtein }</h3>
 			<h3>Fat: ${ breakfastFat }</h3>
-			<h3>Calories: ${ breakfastCal }</h3>
+			  -->
+			
 		</aside>
 		
 		<aside class='meals'>
 			<h2>LUNCH</h2>
-			<h3>Meal Name:<br>${ lunchName }</h3>
-			<h3>Serve: ${ serveLunch }</h3>
-			<h3>Carbon: ${ lunchCarbon }</h3>
-			<h3>Protein: ${ lunchProtein }</h3>
-			<h3>Fat: ${ lunchFat }</h3>
-			<h3>Calories: ${ lunchCal }</h3>
+			<h3 class="importanth3"><br>${ lunchName }</h3>
+			<hr>
+			<h3 class= 'smallh3'>Calories:<br>${ lunchCal } cals</h3> 
+			<hr>
+			<h3 class= 'smallh3'>Servings:<br>1 portion(s)</h3>
+			<hr>
+			
+			
+			<h4>${ serveLunch } for ${ lunchName } respectively</h4>
+			<h4 class="smallh4 head">Nutrients:</h4>
+			<h4 class="smallh4">Carbon: ${ lunchCarbon } g</h4>
+			<h4 class="smallh4">Protein: ${ lunchProtein } g</h4>
+			<h4 class="smallh4">Fat: ${ lunchFat } g</h4>
+			 
+			
 		</aside>
 		
 		<aside class='meals'>
 			<h2>DINNER</h2>
-			<h3>Meal Name:<br>${ dinnerName }</h3>
-			<h3>Serve: ${ serveDinner }</h3>
-			<h3>Carbon: ${ dinneCarbon }</h3>
+			<h3 class="importanth3"><br>${ dinnerName }</h3>
+			<hr>
+			<h3 class= 'smallh3'>Calories:<br>${ dinneCal }</h3>
+			<hr>
+			<h3 class= 'smallh3'>Servings:<br>${ serveDinner } portion(s)</h3>
+			<hr>
+			
+			<h4>${ dinnerWeight } g for ${ dinnerName } respectively</h4>
+			<h4 class="smallh4 head">Nutrients:</h4>
+			<h4 class="smallh4">Carbon: ${ dinneCarbon } g</h4>
+			<h4 class="smallh4">Protein: ${ dinneProtein } g</h4>
+			<h4 class="smallh4">Fat: ${ dinneFat } g</h4>
+			
+			
+			<!--<h3>Carbon: ${ dinneCarbon }</h3>
 			<h3>Protein: ${ dinneProtein }</h3>
 			<h3>Fat: ${ dinneFat }</h3>
-			<h3>Calories: ${ dinneCal }</h3>
+			  -->
+			
 		</aside>
 
 
