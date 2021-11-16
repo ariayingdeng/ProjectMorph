@@ -160,14 +160,12 @@ main {
 	display: block;
 	width: 200px;
 	margin: 0 auto;
-	
-	
 }
 
 #newBtn {
 	display: block;
 	width: 300px;
-	margin: 0 auto;
+	margin: 0 auto;;
 }
 
 hr {
@@ -217,8 +215,8 @@ h4 {
 					<input type="hidden" name="analysisReport" value="analysisReport" />
 					<a href="javascript:document.analysisReportForm.submit()">Analysis</a> 
 					</form>
-					<form action="/" method="POST" name="">
-					<a href="javascript:document.@name.submit()">Workout Plans</a>
+					<form action="/workoutplan" method="POST" name="workoutPlan">
+					<a href="javascript:document.workoutPlan.submit()">Workout Plans</a>
 					</form>
 					<form action="/GenerateMealPlan" method="POST" name="GenerateMealPlan">
 					<a href="javascript:document.GenerateMealPlan.submit()">Meal Plans</a>
@@ -228,6 +226,9 @@ h4 {
 					</form>
 					<form action="/" method="POST" name="">
 					<a href="javascript:document.@name.submit()">Community</a>
+					</form>
+					<form action="/userSetting" method="POST" name="userSetting">
+					<a href="javascript:document.userSetting.submit()">Setting</a>
 					</form>
 					
 				</aside>

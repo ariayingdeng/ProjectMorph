@@ -261,8 +261,8 @@ tr, td, th {
 						<input type="hidden" name="analysisReport" value="analysisReport" />
 						<a href="javascript:document.analysisReportForm.submit()">Analysis</a>
 					</form>
-					<form action="/" method="POST" name="">
-						<a href="javascript:document.@name.submit()">Workout Plans</a>
+					<form action="/workoutplan" method="POST" name="workoutPlan">
+						<a href="javascript:document.workoutPlan.submit()">Workout Plans</a>
 					</form>
 					<form action="/GenerateMealPlan" method="POST" name="GenerateMealPlan">
 					<a href="javascript:document.GenerateMealPlan.submit()">Meal Plans</a>
@@ -272,6 +272,9 @@ tr, td, th {
 					</form>
 					<form action="/" method="POST" name="">
 						<a href="javascript:document.@name.submit()">Community</a>
+					</form>
+					<form action="/userSetting" method="POST" name="userSetting">
+					<a href="javascript:document.userSetting.submit()">Setting</a>
 					</form>
 
 				</aside>

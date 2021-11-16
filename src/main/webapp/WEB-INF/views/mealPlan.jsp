@@ -297,6 +297,12 @@ p {
 	color: red;
 }
 
+#newMealBtn {
+	display: block;
+	width: 20%;
+	margin: 0 auto;
+}
+
 </style>
 </head>
 <body>
@@ -317,15 +323,15 @@ p {
 			<nav>
 				<aside id="firstAside">
 					<form action="/bodyInfoInput" method="POST" name="bodyInfoInput">
-						<a href="javascript:document.bodyInfoInput.submit()">Body Info</a>
+					<a href="javascript:document.bodyInfoInput.submit()">Body Info</a>
 					</form>
 					<form action="/bodyAnalysisReport" method="POST"
 						name="analysisReportForm">
 						<input type="hidden" name="analysisReport" value="analysisReport" />
 						<a href="javascript:document.analysisReportForm.submit()">Analysis</a>
 					</form>
-					<form action="/" method="POST" name="">
-						<a href="javascript:document.@name.submit()">Workout Plans</a>
+					<form action="/workoutplan" method="POST" name="workoutPlan">
+						<a href="javascript:document.workoutPlan.submit()">Workout Plans</a>
 					</form>
 					<form action="/GenerateMealPlan" method="POST" name="GenerateMealPlan">
 					<a href="javascript:document.GenerateMealPlan.submit()">Meal Plans</a>
@@ -335,6 +341,9 @@ p {
 					</form>
 					<form action="/" method="POST" name="">
 						<a href="javascript:document.@name.submit()">Community</a>
+					</form>
+					<form action="/userSetting" method="POST" name="userSetting">
+					<a href="javascript:document.userSetting.submit()">Setting</a>
 					</form>
 
 				</aside>
@@ -431,8 +440,10 @@ p {
 
 
 	</div>
-	
-	<p>If you want to lose weight, eat 80% of portions. For gaining weight, eat 120% of portions.</p>
+		<form:form method="POST" action="/newMeal" modelAttribute="newMeal">
+			<input type="submit" value="CHANGE MEAL PLANS" id="newMealBtn">
+		</form:form>
+	<p>If you want to lose weight, eat 80% of suggested portions. For gaining weight, eat 120% of suggested portions.</p>
 	<footer>
 		<small>&copy; 2021 by Group Morph. All rights reserved.</small>
 	</footer>

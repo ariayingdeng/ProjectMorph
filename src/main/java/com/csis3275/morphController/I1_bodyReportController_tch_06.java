@@ -95,6 +95,8 @@ public class I1_bodyReportController_tch_06 {
 		model.addAttribute("userBMR", report.getBMR());
 		model.addAttribute("CaloriesPerDay", report.getTDEE());
 		model.addAttribute("CaloriesPerWeek", report.getTDEE() * 7);
+
+		
 		model.addAttribute("moderateCarbonProtein", caloryReport.getProtein30());
 		model.addAttribute("moderateCarbonFat", caloryReport.getFat35());
 		model.addAttribute("moderateCarbonCarb", caloryReport.getCarb35());
