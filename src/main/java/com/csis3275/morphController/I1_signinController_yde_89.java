@@ -55,17 +55,24 @@ public class I1_signinController_yde_89 {
 	
 	@PostMapping("/newUser")
 	public String addUser(@ModelAttribute("newUser") User newUser, Model model) {
-		// encryption strength: 10
-		bCryptPasswordEncoder = new BCryptPasswordEncoder(10);
-		if (!newUser.getPassword().equals(newUser.getConfirmPw())) {
-			String wrongPw = "The passwords you entered don't match.";
-			model.addAttribute("wrong", wrongPw);
+		if (userRepo.existsByUsername(newUser.getUsername())) {
+			String errorMsg = "The username is unavailable.";
+			model.addAttribute("wrong", errorMsg);
 			return "userRegister";
 		}
-		String encrptedPassword = bCryptPasswordEncoder.encode(newUser.getPassword());
-		newUser.setPassword(encrptedPassword);
-		userRepo.save(newUser);
-		return "userLogin";
+		else {
+			// encryption strength: 10
+			bCryptPasswordEncoder = new BCryptPasswordEncoder(10);
+			if (!newUser.getPassword().equals(newUser.getConfirmPw())) {
+				String wrongPw = "The passwords you entered don't match.";
+				model.addAttribute("wrong", wrongPw);
+				return "userRegister";
+			}
+			String encrptedPassword = bCryptPasswordEncoder.encode(newUser.getPassword());
+			newUser.setPassword(encrptedPassword);
+			userRepo.save(newUser);
+			return "userLogin";
+		}
 	}
 	
 	@PostMapping("/logOut")
