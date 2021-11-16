@@ -264,8 +264,8 @@ tr, td, th {
 					<form action="/workoutplan" method="POST" name="workoutPlan">
 						<a href="javascript:document.workoutPlan.submit()">Workout Plans</a>
 					</form>
-					<form action="/" method="POST" name="">
-						<a href="javascript:document.@name.submit()">Meal Plans</a>
+					<form action="/GenerateMealPlan" method="POST" name="GenerateMealPlan">
+					<a href="javascript:document.GenerateMealPlan.submit()">Meal Plans</a>
 					</form>
 					<form action="/" method="POST" name="">
 						<a href="javascript:document.@name.submit()">Check-In</a>

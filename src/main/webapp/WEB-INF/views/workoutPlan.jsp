@@ -177,25 +177,26 @@ th {
 			<nav>
 				<aside id="firstAside">
 					<form action="/bodyInfoInput" method="POST" name="bodyInfoInput">
-						<a href="javascript:document.bodyInfoInput.submit()">Body Info</a>
+					<a href="javascript:document.bodyInfoInput.submit()">Body Info</a>
 					</form>
-					<form action="/bodyAnalysisReport" method="POST"
-						name="analysisReportForm">
-						<input type="hidden" name="analysisReport" value="analysisReport" />
-						<a href="javascript:document.analysisReportForm.submit()">Analysis</a>
+					<form action="/bodyAnalysisReport" method="POST" name="analysisReportForm">
+					<input type="hidden" name="analysisReport" value="analysisReport" />
+					<a href="javascript:document.analysisReportForm.submit()">Analysis</a> 
 					</form>
 					<form action="/workoutplan" method="POST" name="workoutPlan">
-						<a href="javascript:document.workoutPlan.submit()">Workout
-							Plans</a>
+					<a href="javascript:document.workoutPlan.submit()">Workout Plans</a>
+					</form>
+					<form action="/GenerateMealPlan" method="POST" name="GenerateMealPlan">
+					<a href="javascript:document.GenerateMealPlan.submit()">Meal Plans</a>
 					</form>
 					<form action="/" method="POST" name="">
-						<a href="javascript:document.@name.submit()">Meal Plans</a>
+					<a href="javascript:document.@name.submit()">Check-In</a>
 					</form>
 					<form action="/" method="POST" name="">
-						<a href="javascript:document.@name.submit()">Check-In</a>
+					<a href="javascript:document.@name.submit()">Community</a>
 					</form>
-					<form action="/" method="POST" name="">
-						<a href="javascript:document.@name.submit()">Community</a>
+					<form action="/userSetting" method="POST" name="userSetting">
+					<a href="javascript:document.userSetting.submit()">Setting</a>
 					</form>
 
 				</aside>

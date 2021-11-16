@@ -3,6 +3,7 @@ package com.csis3275.morphController;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -14,6 +15,8 @@ import com.csis3275.morphRepository.UserRepository;
 
 @Controller
 public class I2_userSettingController_jch_02 {
+
+	private BCryptPasswordEncoder bCryptPasswordEncoder;
 	
 	@Autowired
 	UserRepository userRepo;
@@ -35,6 +38,7 @@ public class I2_userSettingController_jch_02 {
 	
 	@PostMapping("/userSettingInput")
 	public String userSettingUpdate(@ModelAttribute("setting")User user, Model model, HttpSession session) {
+		bCryptPasswordEncoder = new BCryptPasswordEncoder(10);
 		int id = (int) session.getAttribute("userId");
 		User thisUser = (User) userRepo.findById(id);
 		model.addAttribute("userName",thisUser.getUsername());
@@ -46,7 +50,8 @@ public class I2_userSettingController_jch_02 {
 		}
 
 		if(!user.getPassword().equals("")){
-			thisUser.setPassword(user.getPassword());
+			String encrptedPassword = bCryptPasswordEncoder.encode(user.getPassword());
+			thisUser.setPassword(encrptedPassword);
 			update=true;
 		}
 		
