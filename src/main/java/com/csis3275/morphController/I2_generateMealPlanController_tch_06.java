@@ -32,17 +32,12 @@ public class I2_generateMealPlanController_tch_06 {
 		} else {
 			return "userLogin";
 		}
-		
-	
-		
-		
-		
 		int breakfastServe = 1, dinnerServe = 1;
 		
 		User user = userRepo.findById((int) session.getAttribute("userId"));
 		double TDEE = user.getTDEE();
-		if (TDEE == 0)
-			return "bodyInfo";
+		if (TDEE <= 0)
+			return "redirect:/bodyInfoInput";
 		mealPlan = new Meal();
 		Meal breakfast = mealPlan.generateBreakfast();
 		Meal dinner = mealPlan.generateDinner();
@@ -109,6 +104,11 @@ public class I2_generateMealPlanController_tch_06 {
 		model.addAttribute("dinneFat", meal.getFat() * serve);
 		model.addAttribute("dinneCal", meal.getCalories() * serve);
 		model.addAttribute("dinnerWeight", (meal.getCarbon() * 8 + meal.getProtein() * 5 + meal.getFat() * 2) * serve);
+	}
+	
+	@PostMapping("/newMeal")
+	public String generateNewPlan(Model model, HttpSession session) {
+		return "redirect:/GenerateMealPlan";
 	}
 	
 	
