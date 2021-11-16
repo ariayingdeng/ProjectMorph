@@ -33,10 +33,16 @@ public class I2_generateMealPlanController_tch_06 {
 			return "userLogin";
 		}
 		
+	
+		
+		
+		
 		int breakfastServe = 1, dinnerServe = 1;
 		
 		User user = userRepo.findById((int) session.getAttribute("userId"));
 		double TDEE = user.getTDEE();
+		if (TDEE == 0)
+			return "bodyInfo";
 		mealPlan = new Meal();
 		Meal breakfast = mealPlan.generateBreakfast();
 		Meal dinner = mealPlan.generateDinner();
