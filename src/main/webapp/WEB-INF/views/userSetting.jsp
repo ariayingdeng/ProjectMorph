@@ -265,13 +265,9 @@ h1, h6, #ttl, .alert {
 				<label for="username"><strong id="ttl">UserName</strong><input
 					type="text" id="username" name="username" placeholder="No Changes, Keep Blank" ></label>
 
-				<label for="password"><strong id="ttl">Password</strong><input
-<<<<<<< HEAD
-					type="text" id="password" name="password" placeholder="No Changes, Keep Blank"></label>
-=======
-					type="password" id="password" name="password" placeholder="No Changes, Keep Blank"></label>
->>>>>>> GenerateMealPlan-Feature-tch-06
-					
+				<label for="password"><strong id="ttl">Password</strong><input 
+				  type="password" id="password" name="password" placeholder="No Changes, Keep Blank"></label>
+
 				<label for="email"><strong id="ttl">Email</strong><input
 					type="text" id="email" name="email" placeholder="No Changes, Keep Blank"></label>
 
