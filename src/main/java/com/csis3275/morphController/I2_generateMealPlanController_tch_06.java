@@ -66,7 +66,7 @@ public class I2_generateMealPlanController_tch_06 {
 		vegeServe = Double.parseDouble(df.format(remainingCalories * 0.2 / vegeCal));
 		oilServe = Double.parseDouble(df.format(remainingCalories * 0.2 / oilCal));
 		double[] lunchServes = {meatServe, vegeServe, oilServe};
-		String[] lunchServesStrings = {meatServe * 100 + " g, ", vegeServe * 100 + " g, ", oilServe + " g"};
+		String[] lunchServesStrings = {df.format(meatServe  * 100) + " g, ", df.format(vegeServe  * 100) + " g, ", df.format(oilServe)  + " g"};
 		
 		setBreakfast(model, breakfast, breakfastServe);
 		
