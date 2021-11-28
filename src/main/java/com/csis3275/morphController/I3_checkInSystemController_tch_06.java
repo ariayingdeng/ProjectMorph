@@ -67,6 +67,12 @@ public class I3_checkInSystemController_tch_06 {
 		model.addAttribute("month", year + "/ " + getMonthString());
 		model.addAttribute("selected", date);
 		passToSession(session, year, month, date);
+		
+		Day tempDay = new Day();
+		tempDay.setDayId(String.format("%d%d%d", year, month, date));
+		checkDay(tempDay, session);
+		model.addAttribute("doEat", tempDay.isEat());
+		model.addAttribute("doExercise", tempDay.isExercise());
 		return "checkInSystem";
 	}
 
@@ -85,6 +91,8 @@ public class I3_checkInSystemController_tch_06 {
 		year = (int) session.getAttribute("Year");
 		month = (int) session.getAttribute("Month");
 		date = day.getDay();
+		
+		
 
 		dateSystem = new DateSystem(date, month, year);
 		fillEmptry(year, month, date);
@@ -94,7 +102,14 @@ public class I3_checkInSystemController_tch_06 {
 		model.addAttribute("dates", myDateQueue);
 		model.addAttribute("month", year + "/ " + getMonthString());
 		model.addAttribute("selected", date);
+		
 		passToSession(session, year, month, date);
+		
+		Day tempDay = new Day();
+		tempDay.setDayId(String.format("%d%d%d", year, month, date));
+		checkDay(tempDay, session);
+		model.addAttribute("doEat", tempDay.isEat());
+		model.addAttribute("doExercise", tempDay.isExercise());
 
 		System.out.println(year + "/ " + month + "/ " + date);
 
@@ -128,6 +143,12 @@ public class I3_checkInSystemController_tch_06 {
 		model.addAttribute("month", year + "/ " + getMonthString());
 		model.addAttribute("selected", date);
 		passToSession(session, year, month, date);
+		
+		Day tempDay = new Day();
+		tempDay.setDayId(String.format("%d%d%d", year, month, date));
+		checkDay(tempDay, session);
+		model.addAttribute("doEat", tempDay.isEat());
+		model.addAttribute("doExercise", tempDay.isExercise());
 
 		System.out.println(year + "/ " + month + "/ " + date);
 
@@ -162,6 +183,12 @@ public class I3_checkInSystemController_tch_06 {
 		model.addAttribute("month", year + "/ " + getMonthString());
 		model.addAttribute("selected", date);
 		passToSession(session, year, month, date);
+		
+		Day tempDay = new Day();
+		tempDay.setDayId(String.format("%d%d%d", year, month, date));
+		checkDay(tempDay, session);
+		model.addAttribute("doEat", tempDay.isEat());
+		model.addAttribute("doExercise", tempDay.isExercise());
 
 		System.out.println(year + "/ " + month + "/ " + date);
 

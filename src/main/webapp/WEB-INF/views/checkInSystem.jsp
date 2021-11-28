@@ -243,6 +243,11 @@ input.inputButton {
 	width: 20%;
 }
 
+input.unCheckButton {
+	background-color: orange;
+	width: 20%;
+}
+
 form {
 	margin-bottom: 0;
 	padding: 5%;
@@ -402,17 +407,36 @@ form {
 
 		</div>
 		<div id="checkinBottom">
-			<div class="inputButtonClass">
+		<c:if test="${ doEat == true }">
+		<div class="inputButtonClass">
+				<form action="/eatClick" method="POST" name="eatClick">
+					<input type="submit" value="Uncheck Eating" class="unCheckButton">
+				</form>
+			</div>
+		</c:if>
+		<c:if test="${ doEat != true }">
+		<div class="inputButtonClass">
 				<form action="/eatClick" method="POST" name="eatClick">
 					<input type="submit" value="Follow Eating Plan" class="inputButton">
 				</form>
 			</div>
-			<div class="inputButtonClass">
-				<form action="/exerciseClick" method="POST" name="exerciseClick">
-					<input type="submit" value="Follow Exercise Plan"
-						class="inputButton">
+		</c:if>
+		<c:if test="${ doExercise == true }">
+		<div class="inputButtonClass">
+				<form action="/eatClick" method="POST" name="eatClick">
+					<input type="submit" value="Uncheck Exercise" class="unCheckButton">
 				</form>
 			</div>
+		</c:if>
+		<c:if test="${ doExercise != true }">
+		<div class="inputButtonClass">
+				<form action="/eatClick" method="POST" name="eatClick">
+					<input type="submit" value="Follow Exercise Plan" class="inputButton">
+				</form>
+			</div>
+		</c:if>
+			
+		
 		</div>
 
 
