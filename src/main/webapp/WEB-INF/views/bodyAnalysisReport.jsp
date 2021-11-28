@@ -267,6 +267,9 @@ tr, td, th {
 					<form action="/GenerateMealPlan" method="POST" name="GenerateMealPlan">
 					<a href="javascript:document.GenerateMealPlan.submit()">Meal Plans</a>
 					</form>
+				<form action="/estimationInfoInput" method="POST" name="goalEstimation">
+						<a href="javascript:document.goalEstimation.submit()">Goal-Estimation</a>
+					</form>
 					<form action="/" method="POST" name="">
 						<a href="javascript:document.@name.submit()">Check-In</a>
 					</form>
