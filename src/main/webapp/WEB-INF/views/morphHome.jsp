@@ -217,8 +217,8 @@ body>footer {
 					<form action="/" method="POST" name="">
 					<a href="javascript:document.@name.submit()">Check-In</a>
 					</form>
-					<form action="/" method="POST" name="">
-					<a href="javascript:document.@name.submit()">Community</a>
+					<form action="/community" method="POST" name="community">
+					<a href="javascript:document.community.submit()">Community</a>
 					</form>
 					<form action="/userSetting" method="POST" name="userSetting">
 					<a href="javascript:document.userSetting.submit()">Setting</a>
