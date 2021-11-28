@@ -177,6 +177,7 @@ body>footer {
 
 #calendarBody #empty {
 	border: none;
+	
 }
 
 #calendarPage {
@@ -195,8 +196,56 @@ body>footer {
 	margin-top: 0px;
 }
 
-#calendarButtonSelected {
-	color: red;	
+
+
+
+
+input#calendarButtonSelected {
+	
+	color: red;
+}
+
+input#calendarButtonComplete {
+
+	background-color: green;
+}
+
+input#calendarButtonHalf {
+
+	background-color: orange;
+}
+
+input#calendarButtonSelectedHalf {
+
+	background-color: orange;
+	color: red;
+}
+
+input#calendarButtonSelectedComplete {
+
+	color: red;
+	background-color: green;
+}
+
+#checkinBottom {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.inputButtonClass {
+	display: block;
+	width: 100%;
+	padding: 0 15%;
+}
+
+input.inputButton {
+	
+	width: 20%;
+}
+
+form {
+	margin-bottom: 0;
+	padding: 5%;
 }
 </style>
 
@@ -299,12 +348,52 @@ body>footer {
 						<form:form action="/checkingByDate" method="POST"
 							name="checkingByDate" modelAttribute="Day">
 							<c:if test="${ selected != date.day }">
-							<form:input type="submit" value="${date.day}" id="calendarButton"
-								path="dayString"></form:input>
+								<c:if test="${ date.eat != true}">
+									<c:if test="${ date.exercise != true }">
+										<form:input type="submit" value="${date.day}"
+											id="calendarButton" path="dayString"></form:input>
+									</c:if>
+									<c:if test="${ date.exercise == true }">
+										<form:input type="submit" value="${date.day}"
+											id="calendarButtonHalf" path="dayString"></form:input>
+									</c:if>
+								</c:if>
+								<c:if test="${ date.exercise != true }">
+									<c:if test="${ date.eat == true }">
+										<form:input type="submit" value="${date.day}"
+											id="calendarButtonHalf" path="dayString"></form:input>
+									</c:if>
+								</c:if>
+								<c:if test="${ date.eat == true}">
+									<c:if test="${date.exercise == true }">
+										<form:input type="submit" value="${date.day}"
+											id="calendarButtonComplete" path="dayString"></form:input>
+									</c:if>
+								</c:if>
 							</c:if>
 							<c:if test="${ selected == date.day }">
-							<form:input type="submit" value="${date.day}" id="calendarButtonSelected"
-								path="dayString"></form:input>
+								<c:if test="${ date.eat != true}">
+									<c:if test="${ date.exercise != true }">
+										<form:input type="submit" value="${date.day}"
+											id="calendarButtonSelected" path="dayString"></form:input>
+									</c:if>
+									<c:if test="${ date.exercise == true }">
+										<form:input type="submit" value="${date.day}"
+											id="calendarButtonSelectedHalf" path="dayString"></form:input>
+									</c:if>
+								</c:if>
+								<c:if test="${ date.exercise != true }">
+									<c:if test="${ date.eat == true }">
+										<form:input type="submit" value="${date.day}"
+											id="calendarButtonSelectedHalf" path="dayString"></form:input>
+									</c:if>
+								</c:if>
+								<c:if test="${ date.eat == true}">
+									<c:if test="${date.exercise == true }">
+										<form:input type="submit" value="${date.day}"
+											id="calendarButtonSelectedComplete" path="dayString"></form:input>
+									</c:if>
+								</c:if>
 							</c:if>
 						</form:form>
 					</c:if>
@@ -312,7 +401,19 @@ body>footer {
 			</div>
 
 		</div>
-
+		<div id="checkinBottom">
+			<div class="inputButtonClass">
+				<form action="/eatClick" method="POST" name="eatClick">
+					<input type="submit" value="Follow Eating Plan" class="inputButton">
+				</form>
+			</div>
+			<div class="inputButtonClass">
+				<form action="/exerciseClick" method="POST" name="exerciseClick">
+					<input type="submit" value="Follow Exercise Plan"
+						class="inputButton">
+				</form>
+			</div>
+		</div>
 
 
 
