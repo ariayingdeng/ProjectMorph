@@ -163,9 +163,10 @@ body>footer {
 	background-position-x: 70%;
 	background-position-y: 30%;
 }
-.alert{
-	grid-column:2;
-	grid-row:2;
+
+.alert {
+	grid-column: 2;
+	grid-row: 2;
 	margin: 0 auto;
 }
 
@@ -203,26 +204,30 @@ h1, h6, #ttl, .alert {
 			<nav>
 				<aside id="firstAside">
 					<form action="/bodyInfoInput" method="POST" name="bodyInfoInput">
-					<a href="javascript:document.bodyInfoInput.submit()">Body Info</a>
+						<a href="javascript:document.bodyInfoInput.submit()">Body Info</a>
 					</form>
-					<form action="/bodyAnalysisReport" method="POST" name="analysisReportForm">
-					<input type="hidden" name="analysisReport" value="analysisReport" />
-					<a href="javascript:document.analysisReportForm.submit()">Analysis</a> 
+					<form action="/bodyAnalysisReport" method="POST"
+						name="analysisReportForm">
+						<input type="hidden" name="analysisReport" value="analysisReport" />
+						<a href="javascript:document.analysisReportForm.submit()">Analysis</a>
 					</form>
 					<form action="/workoutplan" method="POST" name="workoutPlan">
-					<a href="javascript:document.workoutPlan.submit()">Workout Plans</a>
+						<a href="javascript:document.workoutPlan.submit()">Workout
+							Plans</a>
 					</form>
-					<form action="/GenerateMealPlan" method="POST" name="GenerateMealPlan">
-					<a href="javascript:document.GenerateMealPlan.submit()">Meal Plans</a>
+					<form action="/GenerateMealPlan" method="POST"
+						name="GenerateMealPlan">
+						<a href="javascript:document.GenerateMealPlan.submit()">Meal
+							Plans</a>
+					</form>
+					<form action="/checkin" method="POST" name="checkin">
+						<a href="javascript:document.checkin.submit()">Check-In</a>
 					</form>
 					<form action="/" method="POST" name="">
-					<a href="javascript:document.@name.submit()">Check-In</a>
-					</form>
-					<form action="/" method="POST" name="">
-					<a href="javascript:document.@name.submit()">Community</a>
+						<a href="javascript:document.@name.submit()">Community</a>
 					</form>
 					<form action="/userSetting" method="POST" name="userSetting">
-					<a href="javascript:document.userSetting.submit()">Setting</a>
+						<a href="javascript:document.userSetting.submit()">Setting</a>
 					</form>
 
 				</aside>
@@ -258,18 +263,22 @@ h1, h6, #ttl, .alert {
 
 			<h1>Hi ${userName},</h1>
 
-			<h6>You can update your basic information here. </h6>
+			<h6>You can update your basic information here.</h6>
 
-			<form:form action="/userSettingInput" method="POST" modelAttribute="setting">
+			<form:form action="/userSettingInput" method="POST"
+				modelAttribute="setting">
 
 				<label for="username"><strong id="ttl">UserName</strong><input
-					type="text" id="username" name="username" placeholder="No Changes, Keep Blank" ></label>
+					type="text" id="username" name="username"
+					placeholder="No Changes, Keep Blank"></label>
 
-				<label for="password"><strong id="ttl">Password</strong><input 
-				  type="password" id="password" name="password" placeholder="No Changes, Keep Blank"></label>
+				<label for="password"><strong id="ttl">Password</strong><input
+					type="password" id="password" name="password"
+					placeholder="No Changes, Keep Blank"></label>
 
 				<label for="email"><strong id="ttl">Email</strong><input
-					type="text" id="email" name="email" placeholder="No Changes, Keep Blank"></label>
+					type="text" id="email" name="email"
+					placeholder="No Changes, Keep Blank"></label>
 
 				<input type="submit" value="Update" id="btn">
 
@@ -278,11 +287,11 @@ h1, h6, #ttl, .alert {
 		</div>
 		<c:if test="${ updateSuccess !=null }">
 			<div class="alert alert-success" role="alert">${updateSuccess}</div>
-	    </c:if>
-		
+		</c:if>
+
 	</div>
 
-	
+
 
 
 	<footer>
