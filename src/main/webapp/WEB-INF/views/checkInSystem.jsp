@@ -198,10 +198,15 @@ body>footer {
 
 
 
-
+input#calendarButton {
+	border: none;
+	background-color: #FFF0F2;
+	color: grey;
+}
 
 input#calendarButtonSelected {
-	
+	border: none;
+	background-color: #FFF0F2;
 	color: red;
 }
 
@@ -248,7 +253,7 @@ input.unCheckButton {
 	width: 20%;
 }
 
-form {
+#calendar form {
 	margin-bottom: 0;
 	padding: 5%;
 }
@@ -423,14 +428,14 @@ form {
 		</c:if>
 		<c:if test="${ doExercise == true }">
 		<div class="inputButtonClass">
-				<form action="/eatClick" method="POST" name="eatClick">
+				<form action="/exerciseClick" method="POST" name="exerciseClick">
 					<input type="submit" value="Uncheck Exercise" class="unCheckButton">
 				</form>
 			</div>
 		</c:if>
 		<c:if test="${ doExercise != true }">
 		<div class="inputButtonClass">
-				<form action="/eatClick" method="POST" name="eatClick">
+				<form action="/exerciseClick" method="POST" name="exerciseClick">
 					<input type="submit" value="Follow Exercise Plan" class="inputButton">
 				</form>
 			</div>
