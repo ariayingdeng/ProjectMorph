@@ -38,7 +38,7 @@ class BodyInfoTest_jch_02 {
 		.andDo(print())
 		.andExpect(status().isOk())
  		.andExpect(model().attributeExists("analysis"))
- 		.andExpect(model().attribute("loggedIn", userRepository.findByUsername("YingD")))
+ 		.andExpect(model().attribute("loggedIn", userRepository.existsByUsername("YingD")))
  		.andExpect(model().attribute("userName", userRepository.findByUsername("YingD")))
 		.andExpect(MockMvcResultMatchers.view().name("userLogin"));
 	}
