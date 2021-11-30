@@ -226,7 +226,6 @@ h1, h6, #ttl, .alert {
 					</form>
 					<form action="/checkin" method="POST" name="checkin">
 						<a href="javascript:document.checkin.submit()">Check-In</a>
-
 					</form>
 					<form action="/community" method="POST" name="community">
 						<a href="javascript:document.community.submit()">Community</a>

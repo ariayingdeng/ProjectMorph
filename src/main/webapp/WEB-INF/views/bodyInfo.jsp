@@ -216,7 +216,6 @@ h1, h6, #ttl, .alert {
 						<a href="javascript:document.GenerateMealPlan.submit()">Meal
 							Plans</a>
 					</form>
-
 					<form action="/estimationInfoInput" method="POST"
 						name="goalEstimation">
 						<a href="javascript:document.goalEstimation.submit()">Goal-Estimation</a>
