@@ -77,7 +77,7 @@ body {
 #firstAside form {
 	font-size: 0.9em;
 	white-space: nowrap;
-	margin-right: 3%;
+	margin-right: 1.5%;
 }
 
 #navContainer nav #firstAside {
@@ -254,7 +254,7 @@ tr, td, th {
 			<nav>
 				<aside id="firstAside">
 					<form action="/bodyInfoInput" method="POST" name="bodyInfoInput">
-					<a href="javascript:document.bodyInfoInput.submit()">Body Info</a>
+						<a href="javascript:document.bodyInfoInput.submit()">Body Info</a>
 					</form>
 					<form action="/bodyAnalysisReport" method="POST"
 						name="analysisReportForm">
@@ -262,19 +262,27 @@ tr, td, th {
 						<a href="javascript:document.analysisReportForm.submit()">Analysis</a>
 					</form>
 					<form action="/workoutplan" method="POST" name="workoutPlan">
-						<a href="javascript:document.workoutPlan.submit()">Workout Plans</a>
+						<a href="javascript:document.workoutPlan.submit()">Workout
+							Plans</a>
 					</form>
-					<form action="/GenerateMealPlan" method="POST" name="GenerateMealPlan">
-					<a href="javascript:document.GenerateMealPlan.submit()">Meal Plans</a>
+					<form action="/GenerateMealPlan" method="POST"
+						name="GenerateMealPlan">
+						<a href="javascript:document.GenerateMealPlan.submit()">Meal
+							Plans</a>
 					</form>
-					<form action="/" method="POST" name="">
-						<a href="javascript:document.@name.submit()">Check-In</a>
+					<form action="/estimationInfoInput" method="POST"
+						name="goalEstimation">
+						<a href="javascript:document.goalEstimation.submit()">Goal-Estimation</a>
 					</form>
-					<form action="/" method="POST" name="">
-						<a href="javascript:document.@name.submit()">Community</a>
+					<form action="/checkin" method="POST" name="checkin">
+						<a href="javascript:document.checkin.submit()">Check-In</a>
+
+					</form>
+					<form action="/community" method="POST" name="community">
+						<a href="javascript:document.community.submit()">Community</a>
 					</form>
 					<form action="/userSetting" method="POST" name="userSetting">
-					<a href="javascript:document.userSetting.submit()">Setting</a>
+						<a href="javascript:document.userSetting.submit()">Setting</a>
 					</form>
 
 				</aside>
@@ -295,7 +303,8 @@ tr, td, th {
 		<c:if test="${ loggedIn != null }">
 			<aside id="secondAside">
 				<form action="/logOut" method="POST" name="logOut"></form>
-				<a href="javascript:document.logOut.submit()">${ loggedIn }, Log Out</a>
+				<a href="javascript:document.logOut.submit()">${ loggedIn }, Log
+					Out</a>
 			</aside>
 		</c:if>
 
