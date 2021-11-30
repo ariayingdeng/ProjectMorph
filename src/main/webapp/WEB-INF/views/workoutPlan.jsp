@@ -189,11 +189,12 @@ th {
 					<form action="/GenerateMealPlan" method="POST" name="GenerateMealPlan">
 					<a href="javascript:document.GenerateMealPlan.submit()">Meal Plans</a>
 					</form>
+
 					<form action="/estimationInfoInput" method="POST" name="goalEstimation">
 						<a href="javascript:document.goalEstimation.submit()">Goal-Estimation</a>
 					</form>
-					<form action="/" method="POST" name="">
-					<a href="javascript:document.@name.submit()">Check-In</a>
+					<form action="/checkin" method="POST" name="checkin">
+					<a href="javascript:document.checkin.submit()">Check-In</a>
 					</form>
 					<form action="/community" method="POST" name="community">
 					<a href="javascript:document.community.submit()">Community</a>

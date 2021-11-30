@@ -140,7 +140,6 @@ body>footer {
 
 .left {
 	grid-column: 1;
-
 }
 
 .flex {
@@ -153,17 +152,18 @@ body>footer {
 
 .right {
 	grid-column: 3;
-
 }
-.alert{
-	grid-column:2;
-	grid-row:2;
+
+.alert {
+	grid-column: 2;
+	grid-row: 2;
 	margin: 0 auto;
-	border : solid;
+	border: solid;
 	padding: 5%;
 }
-.esRes{
-	color:Green;
+
+.esRes {
+	color: Green;
 }
 
 #btn {
@@ -202,7 +202,7 @@ h1, h6, #ttl, .alert {
 			<nav>
 				<aside id="firstAside">
 					<form action="/bodyInfoInput" method="POST" name="bodyInfoInput">
-					<a href="javascript:document.bodyInfoInput.submit()">Body Info</a>
+						<a href="javascript:document.bodyInfoInput.submit()">Body Info</a>
 					</form>
 					<form action="/bodyAnalysisReport" method="POST"
 						name="analysisReportForm">
@@ -210,19 +210,23 @@ h1, h6, #ttl, .alert {
 						<a href="javascript:document.analysisReportForm.submit()">Analysis</a>
 					</form>
 					<form action="/workoutplan" method="POST" name="workoutPlan">
-						<a href="javascript:document.workoutPlan.submit()">Workout Plans</a>
+						<a href="javascript:document.workoutPlan.submit()">Workout
+							Plans</a>
 					</form>
-					<form action="/GenerateMealPlan" method="POST" name="GenerateMealPlan">
-						<a href="javascript:document.GenerateMealPlan.submit()">Meal Plans</a>
+					<form action="/GenerateMealPlan" method="POST"
+						name="GenerateMealPlan">
+						<a href="javascript:document.GenerateMealPlan.submit()">Meal
+							Plans</a>
 					</form>
-					<form action="/estimationInfoInput" method="POST" name="goalEstimation">
+					<form action="/estimationInfoInput" method="POST"
+						name="goalEstimation">
 						<a href="javascript:document.goalEstimation.submit()">Goal-Estimation</a>
 					</form>
-					<form action="/" method="POST" name="">
-						<a href="javascript:document.@name.submit()">Check-In</a>
+					<form action="/checkin" method="POST" name="checkin">
+						<a href="javascript:document.checkin.submit()">Check-In</a>
 					</form>
 					<form action="/community" method="POST" name="community">
-					<a href="javascript:document.community.submit()">Community</a>
+						<a href="javascript:document.community.submit()">Community</a>
 					</form>
 					<form action="/userSetting" method="POST" name="userSetting">
 						<a href="javascript:document.userSetting.submit()">Setting</a>
@@ -259,25 +263,34 @@ h1, h6, #ttl, .alert {
 
 		<div class="flex">
 
-			<h5>Get The Estimation Of Time Needed To Reach Your Goal Here. <br>Input Your Informations Below To Find Out !</h5>
+			<h5>
+				Get The Estimation Of Time Needed To Reach Your Goal Here. <br>Input
+				Your Informations Below To Find Out !
+			</h5>
 
-			<form:form action="/goalEstimation" method="POST" modelAttribute="estimation">
-				
+			<form:form action="/goalEstimation" method="POST"
+				modelAttribute="estimation">
+
 				<strong id="ttl">Select The WorkOut Type You Followed </strong>
-				<form:select path="exerciseChoice" >
+				<form:select path="exerciseChoice">
 					<form:option value="1" label="Light Exercise" />
 					<form:option value="2" label="Moderate Exercise" />
 					<form:option value="3" label="Vigorous" />
 				</form:select>
 
-				<label for="workoutHours"><strong id="ttl">Input Your WorkOut Hours Per Week</strong><input
-					type="number" id="workoutHours" name="workoutHours" placeholder="Input Whole Number Only" required></label>
-					
-				<label for="averageCaloriesIntakePerDay"><strong id="ttl">Input Your Average Calories Intake Per Day (Kcal)</strong><input
-					type="number" id="averageCaloriesIntakePerDay" name="averageCaloriesIntakePerDay" placeholder="Input Whole Number Only" required></label>
-				
-				<label for="TargetWeightLost"><strong id="ttl">Input Target Weight That You Wish To Cut Down (Kg)</strong><input
-					type="number" id="TargetWeightLost" name="TargetWeightLost" placeholder="Input Whole Number Only" required></label>
+				<label for="workoutHours"><strong id="ttl">Input
+						Your WorkOut Hours Per Week</strong><input type="number" id="workoutHours"
+					name="workoutHours" placeholder="Input Whole Number Only" required></label>
+
+				<label for="averageCaloriesIntakePerDay"><strong id="ttl">Input
+						Your Average Calories Intake Per Day (Kcal)</strong><input type="number"
+					id="averageCaloriesIntakePerDay" name="averageCaloriesIntakePerDay"
+					placeholder="Input Whole Number Only" required></label>
+
+				<label for="TargetWeightLost"><strong id="ttl">Input
+						Target Weight That You Wish To Cut Down (Kg)</strong><input type="number"
+					id="TargetWeightLost" name="TargetWeightLost"
+					placeholder="Input Whole Number Only" required></label>
 
 				<input type="submit" value="Estimate" id="btn">
 
@@ -286,8 +299,12 @@ h1, h6, #ttl, .alert {
 		</div>
 		<div class="right"></div>
 		<c:if test="${ goalEstimateResult !=null }">
-			<div class="alert alert-success" role="alert"><strong>Hi ${userName}, This Is Your Estimation Result</strong> <hr> ${goalEstimateResult}</div>
-	    </c:if>
+			<div class="alert alert-success" role="alert">
+				<strong>Hi ${userName}, This Is Your Estimation Result</strong>
+				<hr>
+				${goalEstimateResult}
+			</div>
+		</c:if>
 	</div>
 
 

@@ -244,9 +244,7 @@ tr, td, th {
 .meals {
 	margin: 5%;
 	border: 1px solid black;
-	
-	
-	background-color: #D3D3D3;	
+	background-color: #D3D3D3;
 }
 
 .meals h2 {
@@ -257,7 +255,6 @@ tr, td, th {
 }
 
 .meals h3 {
-	
 	padding: 0 5%;
 	font-size: 1.2rem;
 	margin-bottom: 0px;
@@ -302,7 +299,6 @@ p {
 	width: 20%;
 	margin: 0 auto;
 }
-
 </style>
 </head>
 <body>
@@ -323,7 +319,7 @@ p {
 			<nav>
 				<aside id="firstAside">
 					<form action="/bodyInfoInput" method="POST" name="bodyInfoInput">
-					<a href="javascript:document.bodyInfoInput.submit()">Body Info</a>
+						<a href="javascript:document.bodyInfoInput.submit()">Body Info</a>
 					</form>
 					<form action="/bodyAnalysisReport" method="POST"
 						name="analysisReportForm">
@@ -331,22 +327,28 @@ p {
 						<a href="javascript:document.analysisReportForm.submit()">Analysis</a>
 					</form>
 					<form action="/workoutplan" method="POST" name="workoutPlan">
-						<a href="javascript:document.workoutPlan.submit()">Workout Plans</a>
+						<a href="javascript:document.workoutPlan.submit()">Workout
+							Plans</a>
 					</form>
-					<form action="/GenerateMealPlan" method="POST" name="GenerateMealPlan">
-					<a href="javascript:document.GenerateMealPlan.submit()">Meal Plans</a>
+					<form action="/GenerateMealPlan" method="POST"
+						name="GenerateMealPlan">
+						<a href="javascript:document.GenerateMealPlan.submit()">Meal
+							Plans</a>
 					</form>
-					<form action="/estimationInfoInput" method="POST" name="goalEstimation">
+					<form action="/estimationInfoInput" method="POST"
+						name="goalEstimation">
 						<a href="javascript:document.goalEstimation.submit()">Goal-Estimation</a>
 					</form>
-					<form action="/" method="POST" name="">
-						<a href="javascript:document.@name.submit()">Check-In</a>
+					<form action="/checkin" method="POST" name="checkin">
+						<a href="javascript:document.checkin.submit()">Check-In</a>
+
 					</form>
+
 					<form action="/community" method="POST" name="community">
-					<a href="javascript:document.community.submit()">Community</a>
+						<a href="javascript:document.community.submit()">Community</a>
 					</form>
 					<form action="/userSetting" method="POST" name="userSetting">
-					<a href="javascript:document.userSetting.submit()">Setting</a>
+						<a href="javascript:document.userSetting.submit()">Setting</a>
 					</form>
 
 				</aside>
@@ -379,74 +381,88 @@ p {
 
 		<aside class='meals'>
 			<h2>BREAKFAST</h2>
-			<h3 class="importanth3"><br>${ breakfastName }</h3>
+			<h3 class="importanth3">
+				<br>${ breakfastName }</h3>
 			<hr>
-			<h3 class= 'smallh3'>Calories:<br>${ breakfastCal }</h3>
+			<h3 class='smallh3'>
+				Calories:<br>${ breakfastCal }</h3>
 			<hr>
-			<h3 class= 'smallh3'>Servings:<br>${ serveBreakfast } portion(s)</h3>
+			<h3 class='smallh3'>
+				Servings:<br>${ serveBreakfast } portion(s)
+			</h3>
 			<hr>
-			
-			<h4>${ breakfastWeight } g for ${ breakfastName }</h4>
+
+			<h4>${ breakfastWeight }gfor ${ breakfastName }</h4>
 			<h4 class="smallh4 head">Nutrients:</h4>
 			<h4 class="smallh4">Carbon: ${ breakfastCarbon } g</h4>
 			<h4 class="smallh4">Protein: ${ breakfastProtein } g</h4>
-			<h4 class="smallh4">Fat: ${ breakfastFat } g</h4>			
+			<h4 class="smallh4">Fat: ${ breakfastFat } g</h4>
 			<!--
 			<h3>Carbon: ${ breakfastCarbon }</h3>
 			<h3>Protein: ${ breakfastProtein }</h3>
 			<h3>Fat: ${ breakfastFat }</h3>
 			  -->
-			
+
 		</aside>
-		
+
 		<aside class='meals'>
 			<h2>LUNCH</h2>
-			<h3 class="importanth3"><br>${ lunchName }</h3>
+			<h3 class="importanth3">
+				<br>${ lunchName }</h3>
 			<hr>
-			<h3 class= 'smallh3'>Calories:<br>${ lunchCal } cals</h3> 
+			<h3 class='smallh3'>
+				Calories:<br>${ lunchCal } cals
+			</h3>
 			<hr>
-			<h3 class= 'smallh3'>Servings:<br>1 portion(s)</h3>
+			<h3 class='smallh3'>
+				Servings:<br>1 portion(s)
+			</h3>
 			<hr>
-			
-			
-			<h4>${ serveLunch } for ${ lunchName } respectively</h4>
+
+
+			<h4>${ serveLunch }for${ lunchName } respectively</h4>
 			<h4 class="smallh4 head">Nutrients:</h4>
 			<h4 class="smallh4">Carbon: ${ lunchCarbon } g</h4>
 			<h4 class="smallh4">Protein: ${ lunchProtein } g</h4>
 			<h4 class="smallh4">Fat: ${ lunchFat } g</h4>
-			 
-			
+
+
 		</aside>
-		
+
 		<aside class='meals'>
 			<h2>DINNER</h2>
-			<h3 class="importanth3"><br>${ dinnerName }</h3>
+			<h3 class="importanth3">
+				<br>${ dinnerName }</h3>
 			<hr>
-			<h3 class= 'smallh3'>Calories:<br>${ dinneCal }</h3>
+			<h3 class='smallh3'>
+				Calories:<br>${ dinneCal }</h3>
 			<hr>
-			<h3 class= 'smallh3'>Servings:<br>${ serveDinner } portion(s)</h3>
+			<h3 class='smallh3'>
+				Servings:<br>${ serveDinner } portion(s)
+			</h3>
 			<hr>
-			
-			<h4>${ dinnerWeight } g for ${ dinnerName } respectively</h4>
+
+			<h4>${ dinnerWeight }gfor ${ dinnerName } respectively</h4>
 			<h4 class="smallh4 head">Nutrients:</h4>
 			<h4 class="smallh4">Carbon: ${ dinneCarbon } g</h4>
 			<h4 class="smallh4">Protein: ${ dinneProtein } g</h4>
 			<h4 class="smallh4">Fat: ${ dinneFat } g</h4>
-			
-			
+
+
 			<!--<h3>Carbon: ${ dinneCarbon }</h3>
 			<h3>Protein: ${ dinneProtein }</h3>
 			<h3>Fat: ${ dinneFat }</h3>
 			  -->
-			
+
 		</aside>
 
 
 	</div>
-		<form:form method="POST" action="/newMeal" modelAttribute="newMeal">
-			<input type="submit" value="CHANGE MEAL PLANS" id="newMealBtn">
-		</form:form>
-	<p>If you want to lose weight, eat 80% of suggested portions. For gaining weight, eat 120% of suggested portions.</p>
+	<form:form method="POST" action="/newMeal" modelAttribute="newMeal">
+		<input type="submit" value="CHANGE MEAL PLANS" id="newMealBtn">
+	</form:form>
+	<p>If you want to lose weight, eat 80% of suggested portions. For
+		gaining weight, eat 120% of suggested portions.</p>
 	<footer>
 		<small>&copy; 2021 by Group Morph. All rights reserved.</small>
 	</footer>
