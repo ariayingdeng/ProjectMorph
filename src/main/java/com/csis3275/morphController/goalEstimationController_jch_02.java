@@ -33,6 +33,8 @@ public class goalEstimationController_jch_02 {
 	
 	@PostMapping("/goalEstimation")
 	public String goalEstimationResult(@ModelAttribute("estimation")GoalEstimation_jch_02 goalEstimation_jch_02, Model model, HttpSession session) {
+		String name = (String) session.getAttribute("username");
+		model.addAttribute("loggedIn", name);
 		
 		int id = (int) session.getAttribute("userId");
 		User thisUser = (User) userRepo.findById(id);

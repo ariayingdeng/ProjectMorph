@@ -77,7 +77,7 @@ body {
 #firstAside form {
 	font-size: 0.9em;
 	white-space: nowrap;
-	margin-right: 3%;
+	margin-right: 1.5%;
 }
 
 #navContainer nav #firstAside {
@@ -342,8 +342,8 @@ p {
 					<form action="/" method="POST" name="">
 						<a href="javascript:document.@name.submit()">Check-In</a>
 					</form>
-					<form action="/" method="POST" name="">
-						<a href="javascript:document.@name.submit()">Community</a>
+					<form action="/community" method="POST" name="community">
+					<a href="javascript:document.community.submit()">Community</a>
 					</form>
 					<form action="/userSetting" method="POST" name="userSetting">
 					<a href="javascript:document.userSetting.submit()">Setting</a>
