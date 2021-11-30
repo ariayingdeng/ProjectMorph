@@ -23,8 +23,8 @@ body {
 	grid-template-columns: 25% 55% 20%;
 	grid-template-rows: 50% 50%;
 	padding: 0%;
-	height: 5%;
-	--block-spacing-vertical: 0px;
+	height: 5%; -
+	-block-spacing-vertical: 0px;
 }
 
 .myHeader form {
@@ -69,7 +69,7 @@ body {
 #firstAside form {
 	font-size: 0.9em;
 	white-space: nowrap;
-	margin-right: 3%;
+	margin-right: 1.5%;
 }
 
 #navContainer nav #firstAside {
@@ -87,7 +87,6 @@ body {
 	font-weight: 600;
 	padding-bottom: 1%;
 	vertical-align: bottom;
-	
 }
 
 #navContainer {
@@ -102,7 +101,7 @@ body {
 }
 
 #secondAside {
-    display: flex;
+	display: flex;
 	justify-content: center;
 	grid-row: 1;
 	grid-column: 3;
@@ -124,7 +123,6 @@ body {
 	border: 2px double rgb(139, 69, 19);
 }
 
-
 body>footer {
 	padding-left: 5%;
 	padding-top: 0px;
@@ -134,7 +132,6 @@ body>footer {
 }
 
 /* CSS style for header ending */
-
 main {
 	height: 42rem;
 }
@@ -154,6 +151,7 @@ main {
 	width: 250px;
 	margin: 0 auto;
 }
+
 .alert {
 	color: red;
 	font-style: italic;
@@ -164,58 +162,66 @@ main {
 </style>
 </head>
 <body>
-<div class="myHeader">
-		
+	<div class="myHeader">
+
 		<form action="/" method="POST" name="morphHome"></form>
 		<h1 id='headerLetter'>
-		
-			<input type="hidden" name="morphHome" value="/" >
-			<a href="javascript:document.morphHome.submit()">
-			<img src="/resources/Group_Logo.png" class="logo" alt="Morph Icon" />
-			</a>
-			MORPH
+
+			<input type="hidden" name="morphHome" value="/"> <a
+				href="javascript:document.morphHome.submit()"> <img
+				src="/resources/Group_Logo.png" class="logo" alt="Morph Icon" />
+			</a> MORPH
 		</h1>
-		
-		
-		
+
+
+
 		<div id='navContainer'>
 			<nav>
 				<aside id="firstAside">
 					<form action="/bodyInfoInput" method="POST" name="bodyInfoInput">
-					<a href="javascript:document.bodyInfoInput.submit()">Body Info</a>
+						<a href="javascript:document.bodyInfoInput.submit()">Body Info</a>
 					</form>
-					<form action="/bodyAnalysisReport" method="POST" name="analysisReportForm">
-					<input type="hidden" name="analysisReport" value="analysisReport" />
-					<a href="javascript:document.analysisReportForm.submit()">Analysis</a> 
+					<form action="/bodyAnalysisReport" method="POST"
+						name="analysisReportForm">
+						<input type="hidden" name="analysisReport" value="analysisReport" />
+						<a href="javascript:document.analysisReportForm.submit()">Analysis</a>
 					</form>
 					<form action="/workoutplan" method="POST" name="workoutPlan">
-					<a href="javascript:document.workoutPlan.submit()">Workout Plans</a>
+						<a href="javascript:document.workoutPlan.submit()">Workout
+							Plans</a>
 					</form>
-					<form action="/GenerateMealPlan" method="POST" name="GenerateMealPlan">
-					<a href="javascript:document.GenerateMealPlan.submit()">Meal Plans</a>
+					<form action="/GenerateMealPlan" method="POST"
+						name="GenerateMealPlan">
+						<a href="javascript:document.GenerateMealPlan.submit()">Meal
+							Plans</a>
 					</form>
-<form action="/checkin" method="POST" name="checkin">
-					<a href="javascript:document.checkin.submit()">Check-In</a>
+					<form action="/estimationInfoInput" method="POST"
+						name="goalEstimation">
+						<a href="javascript:document.goalEstimation.submit()">Goal-Estimation</a>
 					</form>
-					<form action="/" method="POST" name="">
-					<a href="javascript:document.@name.submit()">Community</a>
+					<form action="/checkin" method="POST" name="checkin">
+						<a href="javascript:document.checkin.submit()">Check-In</a>
+
+					</form>
+					<form action="/community" method="POST" name="community">
+						<a href="javascript:document.community.submit()">Community</a>
 					</form>
 					<form action="/userSetting" method="POST" name="userSetting">
-					<a href="javascript:document.userSetting.submit()">Setting</a>
+						<a href="javascript:document.userSetting.submit()">Setting</a>
 					</form>
-					
+
 				</aside>
 			</nav>
 
 		</div>
 		<c:if test="${ loggedIn == null }">
 			<aside id="secondAside">
-			<form action="/loginPage" method="POST" name="loginPage"></form>	
-				<a href="javascript:document.loginPage.submit()">Login</a> 
-				
-			<form action="/registerPage" method="POST" name="registerPage"></form>
+				<form action="/loginPage" method="POST" name="loginPage"></form>
+				<a href="javascript:document.loginPage.submit()">Login</a>
+
+				<form action="/registerPage" method="POST" name="registerPage"></form>
 				<a href="javascript:document.registerPage.submit()">Sign Up</a>
-				
+
 			</aside>
 
 		</c:if>
@@ -227,7 +233,7 @@ main {
 
 	</div>
 	<hr id="headerHr">
-	
+
 	<main class="container">
 		<div class="grid">
 			<div>
@@ -271,7 +277,7 @@ main {
 						<form:errors path="confirmPw" cssClass="error" />
 
 						<input type="submit" value="Sign Up" id="signupBtn">
-						
+
 						<c:if test="${ wrong !=null }">
 							<div class="alert alert-success" role="alert">${wrong}</div>
 						</c:if>
@@ -282,8 +288,8 @@ main {
 		</div>
 
 	</main>
-	
-		<footer>
+
+	<footer>
 		<small>&copy; 2021 by Group Morph. All rights reserved.</small>
 	</footer>
 </body>
