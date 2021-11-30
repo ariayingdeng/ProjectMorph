@@ -75,7 +75,7 @@ body {
 #firstAside form {
 	font-size: 0.9em;
 	white-space: nowrap;
-	margin-right: 3%;
+	margin-right: 1.5%;
 }
 
 #navContainer nav #firstAside {
@@ -162,8 +162,6 @@ th {
 #likeimg {
 	width: 40px;
 }
-
-
 </style>
 
 </head>
@@ -200,6 +198,10 @@ th {
 						name="GenerateMealPlan">
 						<a href="javascript:document.GenerateMealPlan.submit()">Meal
 							Plans</a>
+					</form>
+					<form action="/estimationInfoInput" method="POST"
+						name="goalEstimation">
+						<a href="javascript:document.goalEstimation.submit()">Goal-Estimation</a>
 					</form>
 					<form action="/" method="POST" name="">
 						<a href="javascript:document.@name.submit()">Check-In</a>
@@ -267,14 +269,15 @@ th {
 						<td>${post.content}</td>
 						<td>${post.date}</td>
 						<td><a
-							href="${pageContext.request.contextPath}/community/like/?id=${post.postId}" >
+							href="${pageContext.request.contextPath}/community/like/?id=${post.postId}">
 								<img src="/resources/likesimg.png" id="likeimg" alt="Likes" />
 						</a>${post.likes}</td>
 						<c:if test="${post.user == loggeduser}">
-						<td><a href="${pageContext.request.contextPath}/community/delete/?id=${post.postId}" >Delete</a></td>
+							<td><a
+								href="${pageContext.request.contextPath}/community/delete/?id=${post.postId}">Delete</a></td>
 						</c:if>
 						<c:if test="${post.user != loggeduser}">
-						<td></td>
+							<td></td>
 						</c:if>
 					</tr>
 				</c:forEach>
