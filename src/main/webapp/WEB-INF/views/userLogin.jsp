@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
-<title>Sign In</title>
+<title>Group Morph</title>
 <style>
 body {
 	background-color: lavender;
