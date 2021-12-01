@@ -16,7 +16,7 @@ import com.csis3275.morphRepository.DateCheckInRecordRepository;
 
 @ExtendWith(SpringExtension.class)
 @DataJpaTest
-class DateCheckInRecordRepositoryBlackBoxTest_tch_06 {
+class DateCheckInRecordRepositoryWhiteBoxTest_tch_06 {
 	
 	@Autowired
 	DateCheckInRecordRepository myRepo;
