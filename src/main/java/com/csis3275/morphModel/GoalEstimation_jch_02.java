@@ -91,7 +91,7 @@ public class GoalEstimation_jch_02 {
 		}
 		else {
 			return "Target Weight Lost : " + getTargetWeightLost() +" Kg <br>Calories Burned Per Week : "+calculateCaloriesBurnedPerWeek()
-			+ "Kcal <br><br><p class=\"esRes\"><strong>Your Intake Calories Is More Than Your What You Burned. Follow our provided work-out plan and meal plan to achieve your goal. </strong></p>";
+			+ "Kcal <br><br><p class=\"esRes\"><strong>Your intake calories is more than what you burned. Follow our provided work-out plans and meal plans to achieve your goal. </strong></p>";
 		}
 		
 	}
