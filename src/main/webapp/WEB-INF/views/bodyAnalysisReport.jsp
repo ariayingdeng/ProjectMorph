@@ -13,7 +13,7 @@
 <!-- Bootstrap CSS -->
 <link rel="stylesheet"
 	href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
-<title>Morph Body Report</title>
+<title>Group Morph</title>
 <style>
 body {
 	display: flex;
