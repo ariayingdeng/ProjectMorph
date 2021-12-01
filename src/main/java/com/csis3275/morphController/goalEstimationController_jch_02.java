@@ -39,11 +39,16 @@ public class goalEstimationController_jch_02 {
 		int id = (int) session.getAttribute("userId");
 		User thisUser = (User) userRepo.findById(id);
 		
-		goalEstimation_jch_02.setWeight(thisUser.getWeight());
-		goalEstimation_jch_02.setTDEE(thisUser.getTDEE());
-		model.addAttribute("userName", thisUser.getUsername());
-		model.addAttribute("goalEstimateResult", goalEstimation_jch_02.toString());
-		
-		return "/goalEstimation";
+		if(thisUser.getTDEE() == 0) {
+			
+			return "redirect:/bodyInfoInput";
+		}
+		else {
+			goalEstimation_jch_02.setWeight(thisUser.getWeight());
+			goalEstimation_jch_02.setTDEE(thisUser.getTDEE());
+			model.addAttribute("userName", thisUser.getUsername());
+			model.addAttribute("goalEstimateResult", goalEstimation_jch_02.toString());
+			return "/goalEstimation";
+		}
 	}
 }

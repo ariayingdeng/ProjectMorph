@@ -85,7 +85,14 @@ public class GoalEstimation_jch_02 {
 	}
 	
 	public String toString() {
-		return "Target Weight Lost : " + getTargetWeightLost() +" Kg <br>Calories Burned Per Week : "+calculateCaloriesBurnedPerWeek()
-		+ "Kcal <br><br><p class=\"esRes\"><strong>The Estimated Time To Achieve Your Goal Is : " + calculateOverallWeeksNeeded() + " Weeks.</strong></p>";
+		if(calculateCaloriesBurnedPerWeek() > 0) {
+			return "Target Weight Lost : " + getTargetWeightLost() +" Kg <br>Calories Burned Per Week : "+calculateCaloriesBurnedPerWeek()
+			+ "Kcal <br><br><p class=\"esRes\"><strong>The Estimated Time To Achieve Your Goal Is : " + calculateOverallWeeksNeeded() + " Weeks.</strong></p>";
+		}
+		else {
+			return "Target Weight Lost : " + getTargetWeightLost() +" Kg <br>Calories Burned Per Week : "+calculateCaloriesBurnedPerWeek()
+			+ "Kcal <br><br><p class=\"esRes\"><strong>Your Intake Calories Is More Than Your What You Burned. Follow our provided work-out plan and meal plan to achieve your goal. </strong></p>";
+		}
+		
 	}
 }
