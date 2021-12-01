@@ -1,5 +1,6 @@
 package com.csis3275.test;
 
+import static org.hamcrest.CoreMatchers.any;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
@@ -11,11 +12,14 @@ import javax.websocket.Session;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -38,11 +42,11 @@ class I1_bodyReportController_tester_tch_06 {
 	private MockMvc mvc;
 	
 	
+	
 	@MockBean
 	private UserRepository userRepository;
 	
-	@Autowired
-	private UserRepository myRepo;
+
 	
 	/*
 	 * Test the appropriate view is return if no login information
@@ -58,28 +62,6 @@ class I1_bodyReportController_tester_tch_06 {
 		.andExpect(MockMvcResultMatchers.view().name("userLogin"));
 	}
 	
-	@Test
-	public void testFrontPageWithNoInfo() throws Exception {
-		User tempUser = new User();
-		tempUser.setUsername("James");
-		tempUser.setId(1);
-		myRepo.save(tempUser);
-		System.out.println(myRepo.findById(1));
-		assertNotNull(myRepo.findAll());
-		
-//		mvc.perform(MockMvcRequestBuilders.post("/bodyAnalysisReport")
-//				.accept(MediaType.TEXT_HTML)				
-//				.param("userId", "1")
-//				.sessionAttr("userId", 1)
-//				.sessionAttr("loggedIn", true)
-//				
-//				)
-//		.andDo(print())
-//		.andExpect(status().isOk())
-//		.andExpect(model().attributeExists("bodyReport"))
-//		.andExpect(model().attribute("loggedIn", userRepository.findByUsername("bnb")))		
-//		.andExpect(MockMvcResultMatchers.view().name("bodyInfo"));
-	}
-	
+
 
 }
