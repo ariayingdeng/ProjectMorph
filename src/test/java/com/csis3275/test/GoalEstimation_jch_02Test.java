@@ -146,6 +146,7 @@ class GoalEstimation_jch_02Test {
 		myGoalEstimation.setAverageCaloriesIntakePerDay(1500);
 		myGoalEstimation.setTDEE(1550);
 		myGoalEstimation.setTargetWeightLost(5);
-		assertEquals("Target Weight Lost : 5 Kg <br>Calories Burned Per Week : 1767.5Kcal <br><br><p class=\"esRes\"><strong>The Estimated Time To Achieve Your Goal Is : 30 Weeks.</strong></p>", myGoalEstimation.toString());
+		assertEquals("Target Weight Lost : 5 Kg <br>Calories Burned Per Week : 1767.5Kcal <br><br>"
+				+ "<p class=\"esRes\"><strong>The Estimated Time To Achieve Your Goal Is : 30 Weeks.</strong></p>", myGoalEstimation.toString());
 	}
 }
