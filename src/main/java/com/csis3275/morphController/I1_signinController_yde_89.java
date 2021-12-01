@@ -24,7 +24,7 @@ public class I1_signinController_yde_89 {
 	
 	@RequestMapping("/loginPage")
 	@PostMapping("/loginPage")
-	public String showLoginPage(@ModelAttribute("newAccount") User user) {
+	public String showLoginPage(@ModelAttribute("userLogin") User user) {
 		return "userLogin";
 	}
 	
@@ -37,6 +37,7 @@ public class I1_signinController_yde_89 {
 		for (User user: userRepo.findAll()) {
 			if (user.getUsername().equalsIgnoreCase(username) && bCryptPasswordEncoder.matches(password, user.getPassword())) {
 				session.setAttribute("userId", user.getId());
+				session.setAttribute("username", user.getUsername());
 				session.setAttribute("loggedIn", true);
 				model.addAttribute("loggedIn", user.getUsername());
 				return "morphHome";
