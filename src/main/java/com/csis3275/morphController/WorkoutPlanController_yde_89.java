@@ -26,8 +26,8 @@ public class WorkoutPlanController_yde_89 {
 	@PostMapping("/workoutplan")
 	public String generateWorkoutPlan(Model model, HttpSession session) {
 		if (session.getAttribute("loggedIn") != null && (boolean) session.getAttribute("loggedIn")) {
-			User loggedUser = userRepo.findById((int) session.getAttribute("userId"));
-			String name = loggedUser.getUsername();
+			String name = (String) session.getAttribute("username");
+			User loggedUser = userRepo.findByUsername(name);
 			model.addAttribute("loggedIn", name);
 			
 			if (loggedUser.getTDEE() <= 0) {

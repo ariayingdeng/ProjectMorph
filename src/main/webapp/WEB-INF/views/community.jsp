@@ -265,13 +265,13 @@ th {
 			<tbody>
 				<c:forEach var="post" items="${allPosts}">
 					<tr>
-						<td>${post.user}</td>
-						<td>${post.content}</td>
+						<td class="poster">${post.user}</td>
+						<td class="postcontent">${post.content}</td>
 						<td>${post.date}</td>
 						<td><a
 							href="${pageContext.request.contextPath}/community/like/?id=${post.postId}">
 								<img src="/resources/likesimg.png" id="likeimg" alt="Likes" />
-						</a>${post.likes}</td>
+						</a><span class="likesNum">${post.likes}</span></td>
 						<c:if test="${post.user == loggeduser}">
 							<td><a
 								href="${pageContext.request.contextPath}/community/delete/?id=${post.postId}">Delete</a></td>
