@@ -24,7 +24,7 @@ class CommunityBlackboxTest_yde_89 {
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
-		System.setProperty("webdriver.chrome.driver", "D:\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "c:\\chromedriver.exe");
 	    driver = new ChromeDriver();
 	    js = (JavascriptExecutor) driver;
 	    vars = new HashMap<String, Object>();

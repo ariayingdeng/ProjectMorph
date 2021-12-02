@@ -26,7 +26,7 @@ class GoalEstimationBBTest_jch_02 {
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 		// set up chrome driver
-		System.setProperty("webdriver.chrome.driver", "D:\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "c:\\chromedriver.exe");
 		driver = new ChromeDriver();
 		js = (JavascriptExecutor) driver;
 		vars = new HashMap<String, Object>();
