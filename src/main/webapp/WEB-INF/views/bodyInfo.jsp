@@ -179,7 +179,7 @@ h1, h6, #ttl, .alert {
 }
 </style>
 
-<title>Body Analysis</title>
+<title>Group Morph</title>
 </head>
 <body>
 
